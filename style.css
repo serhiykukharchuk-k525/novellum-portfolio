@@ -151,7 +151,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 /* ── Report pages ── */
 .rpage { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
 .rpage.active { opacity: 1; pointer-events: auto; }
-.rpage-scroll { height: 100%; overflow-y: auto; overflow-x: hidden; padding: 28px 32px; scrollbar-width: thin; scrollbar-color: rgba(59,18,24,0.15) transparent; }
+.rpage-scroll { height: 100%; overflow-y: auto; overflow-x: hidden; padding: 20px 28px; scrollbar-width: thin; scrollbar-color: rgba(59,18,24,0.15) transparent; }
 .rpage-scroll::-webkit-scrollbar { width: 4px; }
 .rpage-scroll::-webkit-scrollbar-track { background: transparent; }
 .rpage-scroll::-webkit-scrollbar-thumb { background: rgba(59,18,24,0.15); border-radius: 2px; }
@@ -480,54 +480,32 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 /* ──────────────────────────────────────
    PAGE 2: SOLUTION — Live dashboard
 ────────────────────────────────────── */
-.solution-header {
-  margin-bottom: 16px;
-}
+.solution-header { margin-bottom: 12px; }
+.sh-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
 .sh-badge {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
   color: var(--green-bright);
   background: rgba(46,125,87,0.08);
   border: 1px solid rgba(46,125,87,0.2);
-  padding: 4px 12px; border-radius: 99px; margin-bottom: 14px;
+  padding: 3px 10px; border-radius: 99px;
 }
-.sh-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); }
-.sh-title { font-size: clamp(22px,2.5vw,32px); font-weight: 400; font-family: var(--serif); letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 8px; }
+.sh-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); flex-shrink: 0; }
+.sh-kpills { display: flex; gap: 6px; flex-wrap: wrap; }
+.sh-pill {
+  font-size: 11px; color: var(--faint);
+  background: rgba(59,18,24,0.05);
+  border: 1px solid var(--border);
+  padding: 2px 8px; border-radius: 99px;
+}
+.sh-pill.green { color: var(--green-bright); background: rgba(46,125,87,0.06); border-color: rgba(46,125,87,0.18); }
+.sh-bottom { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.sh-title { font-size: clamp(20px,2.2vw,28px); font-weight: 400; font-family: var(--serif); letter-spacing: -0.01em; line-height: 1.2; margin: 0; }
 .grad {
   background: linear-gradient(135deg, #C44060 0%, #E8786A 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.sh-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; max-width: 500px; }
-.sh-stats { display: flex; gap: 20px; }
-.sh-stat { text-align: left; }
-.ss-val { font-size: 20px; font-weight: 700; color: var(--green-bright); font-family: var(--serif); letter-spacing: -0.02em; }
-.ss-label { font-size: 11px; color: var(--faint); margin-top: 2px; }
-
-/* Author card */
-.sh-author {
-  display: flex; align-items: center; gap: 12px;
-  background: rgba(59,18,24,0.04);
-  border: 1px solid var(--border); border-radius: 10px;
-  padding: 12px 16px; margin-bottom: 10px; width: 220px;
-}
-.sha-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--brand), var(--brand-hi));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 700; flex-shrink: 0;
-}
-.sha-name { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
-.sha-role { font-size: 11px; color: var(--faint); margin-bottom: 6px; }
-.sha-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-.sha-tags span {
-  font-size: 10px; color: var(--faint);
-  background: rgba(59,18,24,0.06);
-  border: 1px solid var(--border);
-  padding: 1px 6px; border-radius: 4px;
-}
-.sh-links { display: flex; gap: 12px; }
-.sh-links a { font-size: 12px; color: var(--brand-hi); text-decoration: none; }
-.sh-links a:hover { opacity: 0.8; }
+.sh-desc { font-size: 12px; color: var(--muted); line-height: 1.5; margin: 0; }
 
 /* Live dashboard widget */
 .live-dash {
@@ -570,7 +548,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
   border-radius: 8px; padding: 12px;
 }
 .ldk-l { font-size: 10px; color: var(--faint); margin-bottom: 5px; }
-.ldk-v { font-size: 22px; font-weight: 500; font-family: var(--serif); line-height: 1.2; margin-bottom: 3px; }
+.ldk-v { font-size: 22px; font-weight: 500; font-family: var(--serif); line-height: 1.2; margin-bottom: 3px; transition: opacity 0.15s ease; }
 .ldk-d { font-size: 10px; font-weight: 500; margin-bottom: 6px; }
 .ldk-d.green { color: var(--green-bright); }
 .ldk-d.red { color: var(--red-bright); }

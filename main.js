@@ -258,12 +258,44 @@ document.addEventListener('DOMContentLoaded', () => {
     fpToggle.addEventListener('click', () => fpPanel.classList.toggle('collapsed'));
   }
 
-  // Dashboard filter tabs
-  document.querySelectorAll('.ldt-filter').forEach(tab => {
+  // Dashboard filter tabs — switch KPI data per period
+  const dashData = {
+    0: [ // Поточний місяць
+      { v: '₴2.4M', d: '↑ 23.4% vs попер. міс.', pos: true },
+      { v: '1 847', d: '↑ 8.1% vs попер. міс.', pos: true },
+      { v: '₴1 299', d: '↑ 14.2% vs попер. міс.', pos: true },
+      { v: '38%',   d: '↓ 1.2% vs попер. міс.', pos: false },
+    ],
+    1: [ // Квартал
+      { v: '₴6.9M', d: '↑ 18.7% vs попер. кварт.', pos: true },
+      { v: '5 214', d: '↑ 11.3% vs попер. кварт.', pos: true },
+      { v: '₴1 324', d: '↑ 9.8% vs попер. кварт.', pos: true },
+      { v: '39.4%', d: '↑ 0.6% vs попер. кварт.', pos: true },
+    ],
+    2: [ // Рік
+      { v: '₴26.1M', d: '↑ 34.2% vs мин. рік', pos: true },
+      { v: '19 480', d: '↑ 27.5% vs мин. рік', pos: true },
+      { v: '₴1 340', d: '↑ 5.1% vs мин. рік', pos: true },
+      { v: '37.8%', d: '↓ 0.4% vs мин. рік', pos: false },
+    ],
+  };
+  document.querySelectorAll('.ldt-filter').forEach((tab, idx) => {
     tab.addEventListener('click', () => {
       const group = tab.closest('.ld-toolbar');
       group.querySelectorAll('.ldt-filter').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
+      const data = dashData[idx];
+      data.forEach((row, i) => {
+        const vEl = document.getElementById('kv' + i);
+        const dEl = document.getElementById('kd' + i);
+        if (vEl) { vEl.style.opacity = '0'; setTimeout(() => { vEl.textContent = row.v; vEl.style.opacity = '1'; }, 150); }
+        if (dEl) {
+          setTimeout(() => {
+            dEl.textContent = row.d;
+            dEl.className = 'ldk-d ' + (row.pos ? 'green' : 'red');
+          }, 150);
+        }
+      });
     });
   });
 
