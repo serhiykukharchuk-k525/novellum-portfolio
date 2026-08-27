@@ -1,7 +1,7 @@
 /* ── State ── */
-const pages = ['home','cases','services','process','contact'];
-const pageNames = { home:'Про мене', cases:'Кейси', services:'Послуги', process:'Процес', contact:'Контакт' };
-let current = 'home';
+const pages = ['pain','solution','cases','process','contact'];
+const pageNames = { pain:'Зараз', solution:'Результат', cases:'Кейси', process:'Процес', contact:'Контакт' };
+let current = 'pain';
 let animating = false;
 
 /* ── App open animation ── */
@@ -17,7 +17,6 @@ window.addEventListener('load', () => {
       setTimeout(() => {
         shell.style.transition = '';
         initBgCanvas();
-        animateHomePage();
       }, 600);
     });
   });
@@ -37,7 +36,7 @@ function initBgCanvas() {
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(255,255,255,0.055)';
+    ctx.fillStyle = 'rgba(255,255,255,0.04)';
     const sp = 22;
     for (let x = sp; x < canvas.width; x += sp) {
       for (let y = sp; y < canvas.height; y += sp) {
@@ -52,28 +51,6 @@ function initBgCanvas() {
   window.addEventListener('resize', resize);
 }
 
-/* ── Home page chart animations ── */
-function animateHomePage() {
-  // KPI counters
-  document.querySelectorAll('.cnt').forEach((el, i) => {
-    setTimeout(() => countUp(el, +el.dataset.n, 1200), i * 200 + 300);
-  });
-
-  // Line chart
-  const line = document.querySelector('.lc-line');
-  const fill = document.querySelector('.lc-fill');
-  const dot  = document.querySelector('.lc-dot');
-  if (line) {
-    const len = line.getTotalLength ? line.getTotalLength() : 600;
-    line.style.strokeDasharray = len;
-    line.style.strokeDashoffset = len;
-    line.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1) 0.5s';
-    requestAnimationFrame(() => { line.style.strokeDashoffset = '0'; });
-  }
-  if (fill) setTimeout(() => { fill.style.opacity = '1'; }, 1400);
-  if (dot)  setTimeout(() => { dot.style.opacity = '1'; }, 2100);
-}
-
 /* ── Navigate to page ── */
 function goTo(pageId) {
   if (pageId === current || animating || !pages.includes(pageId)) return;
@@ -82,7 +59,6 @@ function goTo(pageId) {
   const prev = document.getElementById('page-' + current);
   const next = document.getElementById('page-' + pageId);
 
-  // Progress bar
   const bar  = document.getElementById('pageLoadBar');
   const fill = document.getElementById('plbFill');
   bar.style.display = 'block';
@@ -93,7 +69,6 @@ function goTo(pageId) {
     fill.style.width = '80%';
   });
 
-  // Fade out current
   if (prev) {
     prev.style.opacity = '0';
     prev.style.transition = 'opacity 0.18s ease';
@@ -107,23 +82,69 @@ function goTo(pageId) {
     requestAnimationFrame(() => { next.style.opacity = '1'; });
     setTimeout(() => { next.style.transition = ''; next.style.opacity = ''; animating = false; }, 250);
 
-    // Complete progress bar
     fill.style.width = '100%';
     setTimeout(() => { bar.style.display = 'none'; fill.style.width = '0%'; }, 450);
 
-    // Animate page content on enter
-    if (pageId === 'home') animateHomePage();
+    if (pageId === 'solution') animateSolutionPage();
 
     current = pageId;
     updateSidebar(pageId);
     updateStatusBar(pageId);
     updateMobileNav(pageId);
 
-    // Scroll page to top
     const scroll = next.querySelector('.rpage-scroll');
     if (scroll) scroll.scrollTop = 0;
 
   }, 180);
+}
+
+/* ── Solution page chart animations ── */
+function animateSolutionPage() {
+  // KPI counters
+  document.querySelectorAll('#page-solution .cnt').forEach((el, i) => {
+    const n = +el.dataset.n;
+    const fmt = el.dataset.fmt;
+    setTimeout(() => countUp(el, n, 1200, fmt), i * 150 + 200);
+  });
+
+  // Line chart
+  const line = document.querySelector('#page-solution .lc-line');
+  const lfill = document.querySelector('#page-solution .lc-fill');
+  const dot  = document.querySelector('#page-solution .lc-dot');
+  if (line) {
+    const len = line.getTotalLength ? line.getTotalLength() : 600;
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+    line.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.4,0,0.2,1) 0.3s';
+    requestAnimationFrame(() => { line.style.strokeDashoffset = '0'; });
+  }
+  if (lfill) setTimeout(() => { lfill.style.opacity = '1'; }, 1200);
+  if (dot)   setTimeout(() => { dot.style.opacity = '1'; }, 1900);
+
+  // Donut chart
+  const circ = 2 * Math.PI * 26; // ~163.4
+  const segs = [
+    { el: document.querySelector('.dseg.s1'), pct: 0.45, offset: 0 },
+    { el: document.querySelector('.dseg.s2'), pct: 0.35, offset: 0.45 },
+    { el: document.querySelector('.dseg.s3'), pct: 0.20, offset: 0.80 },
+  ];
+  segs.forEach((s, i) => {
+    if (!s.el) return;
+    const dash = s.pct * circ;
+    const gap  = circ - dash;
+    const rot  = -90 + s.offset * 360;
+    s.el.setAttribute('transform', `rotate(${rot} 40 40)`);
+    setTimeout(() => {
+      s.el.style.strokeDasharray = `${dash} ${gap}`;
+    }, 400 + i * 200);
+  });
+
+  // Bar chart fill
+  setTimeout(() => {
+    document.querySelectorAll('.ldb-f').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+  }, 500);
 }
 
 /* ── Sidebar state ── */
@@ -149,16 +170,67 @@ function updateMobileNav(pageId) {
 }
 
 /* ── Counter utility ── */
-function countUp(el, target, duration) {
+function countUp(el, target, duration, fmt) {
   const start = performance.now();
   const tick = (now) => {
     const p = Math.min((now - start) / duration, 1);
     const v = Math.round(target * (1 - Math.pow(1 - p, 3)));
-    el.textContent = v;
+    el.textContent = fmt === 'abbr' ? formatAbbr(v) : v.toLocaleString('uk-UA');
     if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = target;
+    else el.textContent = fmt === 'abbr' ? formatAbbr(target) : target.toLocaleString('uk-UA');
   };
   requestAnimationFrame(tick);
+}
+
+function formatAbbr(n) {
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace('.0','') + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(0) + 'K';
+  return n.toString();
+}
+
+/* ── Pain slicer ── */
+function initSlicers() {
+  const items = document.querySelectorAll('.slicer-item');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const pain = item.dataset.pain;
+      // Update slicer UI
+      items.forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.si-check').textContent = '';
+      });
+      item.classList.add('active');
+      item.querySelector('.si-check').textContent = '✓';
+      // Show the right pain visual
+      document.querySelectorAll('.pain-visual').forEach(v => v.classList.remove('active'));
+      const target = document.getElementById('pain-' + pain);
+      if (target) target.classList.add('active');
+    });
+  });
+}
+
+/* ── Cost calculator ── */
+function initCalculator() {
+  const hoursSlider = document.getElementById('hoursSlider');
+  const rateSlider  = document.getElementById('rateSlider');
+  if (!hoursSlider || !rateSlider) return;
+
+  function update() {
+    const h = +hoursSlider.value;
+    const r = +rateSlider.value;
+    document.getElementById('hoursVal').textContent = h + ' год';
+    document.getElementById('rateVal').textContent  = '₴' + r.toLocaleString('uk-UA');
+    const yearCost  = h * 12 * r;
+    const yearHours = h * 12;
+    const cost3y    = yearCost * 3;
+    document.getElementById('calcYearCost').textContent  = '₴' + yearCost.toLocaleString('uk-UA');
+    document.getElementById('calcYearHours').textContent = yearHours + ' год на ручну звітність';
+    document.getElementById('calc3YearCost').textContent = '₴' + cost3y.toLocaleString('uk-UA');
+  }
+
+  hoursSlider.addEventListener('input', update);
+  rateSlider.addEventListener('input', update);
+  update();
 }
 
 /* ── Event listeners ── */
@@ -186,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fpToggle.addEventListener('click', () => fpPanel.classList.toggle('collapsed'));
   }
 
-  // Ribbon tab click (just visual)
+  // Ribbon tab click (visual only)
   document.querySelectorAll('.ribbon-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.ribbon-tab').forEach(t => t.classList.remove('active'));
@@ -194,8 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Window control buttons (cosmetic)
-  document.querySelector('.tb-btn.min')?.addEventListener('click', () => {});
+  // Window control buttons
   document.querySelector('.tb-btn.max')?.addEventListener('click', () => {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
     else document.exitFullscreen?.();
@@ -214,6 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Initial status bar
-  updateStatusBar('home');
+  initSlicers();
+  initCalculator();
+  updateStatusBar('pain');
 });
