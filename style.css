@@ -65,28 +65,17 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 
 /* ── Ribbon ── */
 .ribbon {
-  height: 34px; background: var(--chrome-deep);
-  display: flex; align-items: stretch; flex-shrink: 0;
-  border-bottom: 1px solid var(--border);
+  height: 38px; background: var(--chrome-deep);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; border-bottom: 1px solid var(--border);
 }
-.ribbon-tab {
-  padding: 0 16px; font-size: 12px; color: var(--muted);
-  cursor: pointer; display: flex; align-items: center;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+.ribbon-logo {
+  display: flex; align-items: center; height: 22px;
+  opacity: 0.82; transition: opacity 0.15s;
+  text-decoration: none;
 }
-.ribbon-tab:hover { color: var(--text); }
-.ribbon-tab.active { color: var(--text); border-bottom-color: var(--brand); }
-.ribbon-right { margin-left: auto; display: flex; align-items: center; gap: 4px; padding-right: 12px; }
-.ribbon-action {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 12px; color: var(--muted);
-  padding: 4px 10px; border-radius: 4px;
-  cursor: pointer; transition: background 0.15s, color 0.15s;
-}
-.ribbon-action:hover { background: rgba(59,18,24,0.09); color: var(--text); }
-.ribbon-action.share { background: var(--brand); color: #fff; font-weight: 500; }
-.ribbon-action.share:hover { background: var(--brand-hi); }
+.ribbon-logo:hover { opacity: 1; }
+.ribbon-logo svg { height: 22px; width: auto; }
 
 /* ── App body ── */
 .app-body { flex: 1; display: flex; overflow: hidden; }
