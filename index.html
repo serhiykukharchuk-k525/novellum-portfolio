@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Сергій Кухарчук — Power BI Portfolio</title>
-  <meta name="description" content="Портфоліо проектів з управлінської аналітики та Power BI дашбордів для власників бізнесу.">
+  <title>Сергій Кухарчук · Power BI Portfolio</title>
+  <meta name="description" content="Портфоліо Power BI дашбордів та управлінської аналітики для бізнесу.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,474 +12,525 @@
 </head>
 <body>
 
-  <!-- Loader -->
-  <div class="loader" id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">Nóvellum</div>
-      <div class="loader-text">Завантаження аналітики<span class="dots">...</span></div>
-      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
-      <div class="loader-sub">Power BI · Analytics · BI Strategy</div>
+<!-- ═══ APP SHELL ═══ -->
+<div class="app-shell" id="appShell">
+
+  <!-- Title bar -->
+  <div class="titlebar">
+    <div class="tb-left">
+      <div class="tb-logo">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="0" y="0" width="6" height="6" fill="#922C3E"/>
+          <rect x="8" y="0" width="6" height="6" fill="#C44060"/>
+          <rect x="0" y="8" width="6" height="6" fill="#C44060" opacity=".7"/>
+          <rect x="8" y="8" width="6" height="6" fill="#922C3E" opacity=".5"/>
+        </svg>
+      </div>
+      <span class="tb-title">novellum_portfolio.pbix — Power BI Desktop</span>
+    </div>
+    <div class="tb-right">
+      <div class="tb-btn min">─</div>
+      <div class="tb-btn max">□</div>
+      <div class="tb-btn close">✕</div>
     </div>
   </div>
 
-  <!-- Nav -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Nóvellum</a>
-      <div class="nav-links">
-        <a href="#cases">Кейси</a>
-        <a href="#services">Послуги</a>
-        <a href="#process">Процес</a>
-        <a href="#about">Про мене</a>
-        <a href="#contact" class="btn-nav">Безкоштовний аудит</a>
+  <!-- Ribbon tabs -->
+  <div class="ribbon">
+    <div class="ribbon-tab active">Головна</div>
+    <div class="ribbon-tab">Вставка</div>
+    <div class="ribbon-tab">Моделювання</div>
+    <div class="ribbon-tab">Вигляд</div>
+    <div class="ribbon-tab">Довідка</div>
+    <div class="ribbon-right">
+      <div class="ribbon-action">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Пошук
       </div>
-      <button class="nav-burger" id="navBurger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="ribbon-action share">Опублікувати</div>
     </div>
-    <div class="nav-mobile" id="navMobile">
-      <a href="#cases" class="nav-mobile-link">Кейси</a>
-      <a href="#services" class="nav-mobile-link">Послуги</a>
-      <a href="#process" class="nav-mobile-link">Процес</a>
-      <a href="#about" class="nav-mobile-link">Про мене</a>
-      <a href="#contact" class="nav-mobile-link nav-mobile-cta">Безкоштовний аудит</a>
-    </div>
-  </nav>
+  </div>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-glow"></div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">Power BI · Data Analytics · BI Strategy</div>
-        <h1 class="hero-title">Ваш бізнес<br>в <span class="accent">одній картині</span></h1>
-        <p class="hero-desc">Будую системи управлінської аналітики для власників МСБ. Один дашборд замість 10 таблиць — і ви завжди знаєте, що відбувається.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn-primary">Безкоштовний аудит →</a>
-          <a href="#cases" class="btn-ghost">Дивитись кейси</a>
+  <!-- App body -->
+  <div class="app-body">
+
+    <!-- Pages panel (left sidebar) -->
+    <div class="pages-panel">
+      <div class="pp-title">СТОРІНКИ</div>
+      <div class="pp-list" id="ppList">
+
+        <div class="pp-item active" data-page="home" data-name="Про мене" data-num="1">
+          <div class="pp-num">1</div>
+          <div class="pp-thumb">
+            <div class="ppt-kpis">
+              <div class="ppt-kpi"></div><div class="ppt-kpi"></div>
+              <div class="ppt-kpi"></div><div class="ppt-kpi"></div>
+            </div>
+            <div class="ppt-chart"></div>
+          </div>
+          <div class="pp-name">Про мене</div>
         </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-num-wrap"><span class="stat-num" data-target="40">0</span>+</div>
-            <div class="stat-label">проектів</div>
+
+        <div class="pp-item" data-page="cases" data-name="Кейси" data-num="2">
+          <div class="pp-num">2</div>
+          <div class="pp-thumb">
+            <div class="ppt-cards">
+              <div class="ppt-card"></div>
+              <div class="ppt-card"></div>
+              <div class="ppt-card"></div>
+            </div>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <div class="stat-num-wrap"><span class="stat-num" data-target="7">0</span> днів</div>
-            <div class="stat-label">аудит</div>
+          <div class="pp-name">Кейси</div>
+        </div>
+
+        <div class="pp-item" data-page="services" data-name="Послуги" data-num="3">
+          <div class="pp-num">3</div>
+          <div class="pp-thumb">
+            <div class="ppt-svcs">
+              <div class="ppt-svc"></div>
+              <div class="ppt-svc hi"></div>
+              <div class="ppt-svc"></div>
+            </div>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat">
-            <div class="stat-num-wrap"><span class="stat-num" data-target="3">0</span> роки</div>
-            <div class="stat-label">досвіду</div>
+          <div class="pp-name">Послуги</div>
+        </div>
+
+        <div class="pp-item" data-page="process" data-name="Процес" data-num="4">
+          <div class="pp-num">4</div>
+          <div class="pp-thumb">
+            <div class="ppt-flow">
+              <div class="ppt-step"></div>
+              <div class="ppt-arr">›</div>
+              <div class="ppt-step"></div>
+              <div class="ppt-arr">›</div>
+              <div class="ppt-step"></div>
+              <div class="ppt-arr">›</div>
+              <div class="ppt-step"></div>
+            </div>
+          </div>
+          <div class="pp-name">Процес</div>
+        </div>
+
+        <div class="pp-item" data-page="contact" data-name="Контакт" data-num="5">
+          <div class="pp-num">5</div>
+          <div class="pp-thumb">
+            <div class="ppt-contact">
+              <div class="ppt-contact-box"></div>
+            </div>
+          </div>
+          <div class="pp-name">Контакт</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Canvas area -->
+    <div class="canvas-area" id="canvasArea">
+      <canvas id="bgCanvas"></canvas>
+      <div class="page-load-bar" id="pageLoadBar"><div class="plb-fill" id="plbFill"></div></div>
+
+      <!-- ── PAGE: Про мене ── -->
+      <div class="rpage active" id="page-home">
+        <div class="rpage-scroll">
+          <div class="home-layout">
+
+            <div class="home-left">
+              <div class="home-badge">
+                <div class="badge-dot"></div>
+                Power BI · DAX · Power Query · SQL
+              </div>
+              <h1 class="home-title">Привіт,<br>я <span class="grad">Сергій</span></h1>
+              <p class="home-desc">Перетворюю хаос у таблицях на управлінську аналітику. Будую Power BI дашборди для власників e-commerce, рітейлу та HoReCa — так щоб ви знали стан бізнесу в будь-який момент.</p>
+
+              <div class="home-btns">
+                <a class="btn-brand" href="#" data-goto="cases">Переглянути кейси</a>
+                <a class="btn-outline" href="#" data-goto="contact">Написати мені</a>
+              </div>
+
+              <div class="home-stack">
+                <span>Power BI</span><span>DAX</span><span>Power Query</span>
+                <span>SQL</span><span>Azure</span><span>PostgreSQL</span>
+              </div>
+            </div>
+
+            <div class="home-right">
+              <!-- Live animated summary dashboard -->
+              <div class="mini-dash">
+                <div class="md-header">
+                  <span class="md-icon">▦</span>
+                  Novellum · Executive Summary
+                  <span class="md-status">● Live</span>
+                </div>
+                <div class="md-kpis">
+                  <div class="md-kpi">
+                    <div class="md-kpi-l">Проектів завершено</div>
+                    <div class="md-kpi-v"><span class="cnt" data-n="40">0</span>+</div>
+                    <div class="md-kpi-d green">↑ зростає</div>
+                  </div>
+                  <div class="md-kpi">
+                    <div class="md-kpi-l">Аудит (днів)</div>
+                    <div class="md-kpi-v"><span class="cnt" data-n="7">0</span></div>
+                    <div class="md-kpi-d muted">безкоштовно</div>
+                  </div>
+                  <div class="md-kpi">
+                    <div class="md-kpi-l">Досвід (роки)</div>
+                    <div class="md-kpi-v"><span class="cnt" data-n="3">0</span></div>
+                    <div class="md-kpi-d green">↑ Power BI</div>
+                  </div>
+                  <div class="md-kpi">
+                    <div class="md-kpi-l">NDA проекти</div>
+                    <div class="md-kpi-v">100%</div>
+                    <div class="md-kpi-d muted">конфіденційно</div>
+                  </div>
+                </div>
+                <div class="md-chart-wrap">
+                  <div class="md-chart-title">Динаміка клієнтів · 12 кварталів</div>
+                  <svg class="md-linechart" viewBox="0 0 380 80" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#922C3E" stop-opacity=".35"/>
+                        <stop offset="100%" stop-color="#922C3E" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path class="lc-fill" d="M0,72 L31,65 L63,58 L94,52 L125,55 L157,46 L188,38 L220,30 L251,24 L283,18 L314,11 L346,6 L380,2 L380,80 L0,80Z" fill="url(#g1)" opacity="0"/>
+                    <path class="lc-line" d="M0,72 L31,65 L63,58 L94,52 L125,55 L157,46 L188,38 L220,30 L251,24 L283,18 L314,11 L346,6 L380,2" fill="none" stroke="#922C3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle class="lc-dot" cx="380" cy="2" r="4" fill="#C44060" opacity="0"/>
+                  </svg>
+                  <div class="md-chart-xl">
+                    <span>Q1'23</span><span>Q3</span><span>Q1'24</span><span>Q3</span><span>Q1'25</span><span>Q3</span><span>Q1'26</span>
+                  </div>
+                </div>
+                <div class="md-footer">
+                  <div class="md-footer-item">Ніша: E-commerce · Retail · HoReCa</div>
+                  <div class="md-footer-item highlight">Всі проекти під NDA</div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
 
-      <!-- Animated Dashboard Mockup -->
-      <div class="hero-dashboard">
-        <div class="db-window">
-          <div class="db-header">
-            <div class="db-dots"><span></span><span></span><span></span></div>
-            <div class="db-title-bar">
-              <div class="db-icon">▦</div>
-              <span>Novellum Analytics · Revenue Dashboard</span>
-            </div>
-            <div class="db-meta">Оновлено: сьогодні 09:41</div>
+      <!-- ── PAGE: Кейси ── -->
+      <div class="rpage" id="page-cases">
+        <div class="rpage-scroll">
+          <div class="page-header">
+            <h2>Кейси</h2>
+            <p>Реальні проекти з реальними результатами</p>
           </div>
+          <div class="cases-grid">
 
-          <div class="db-toolbar">
-            <div class="db-filter active">Поточний місяць</div>
-            <div class="db-filter">Квартал</div>
-            <div class="db-filter">Рік</div>
-            <div class="db-toolbar-right">
-              <div class="db-refresh">↻</div>
-              <div class="db-share">⬡</div>
-            </div>
-          </div>
-
-          <div class="db-body">
-            <div class="db-kpis">
-              <div class="db-kpi">
-                <div class="db-kpi-label">Виручка (місяць)</div>
-                <div class="db-kpi-val">₴<span class="count" data-target="2400000" data-format="abbr">0</span></div>
-                <div class="db-kpi-delta positive">↑ 23.4% vs попер. міс.</div>
+            <div class="case-tile">
+              <div class="ct-top">
+                <div class="ct-tag">E-commerce</div>
+                <div class="ct-year">2025</div>
               </div>
-              <div class="db-kpi">
-                <div class="db-kpi-label">Замовлення</div>
-                <div class="db-kpi-val"><span class="count" data-target="1847" data-format="num">0</span></div>
-                <div class="db-kpi-delta positive">↑ 8.1% vs попер. міс.</div>
-              </div>
-              <div class="db-kpi">
-                <div class="db-kpi-label">Середній чек</div>
-                <div class="db-kpi-val">₴<span class="count" data-target="1299" data-format="num">0</span></div>
-                <div class="db-kpi-delta positive">↑ 14.2% vs попер. міс.</div>
-              </div>
-              <div class="db-kpi">
-                <div class="db-kpi-label">Маржинальність</div>
-                <div class="db-kpi-val"><span class="count" data-target="38" data-format="num">0</span>%</div>
-                <div class="db-kpi-delta negative">↓ 1.2% vs попер. міс.</div>
-              </div>
-            </div>
-
-            <div class="db-charts-row">
-              <div class="db-chart-card wide">
-                <div class="db-chart-label">Динаміка виручки (12 місяців)</div>
-                <svg class="chart-line" viewBox="0 0 300 70" preserveAspectRatio="none">
+              <h3>Revenue Dashboard для онлайн-рітейлу</h3>
+              <p>Консолідація 8 джерел: Rozetka, Prom, власний сайт, склад, CRM. Єдина версія цифр для СЕО без жодної Excel-таблиці.</p>
+              <div class="ct-chart">
+                <svg viewBox="0 0 220 48">
                   <defs>
-                    <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#922C3E" stop-opacity="0.35"/>
+                    <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#922C3E" stop-opacity=".3"/>
                       <stop offset="100%" stop-color="#922C3E" stop-opacity="0"/>
                     </linearGradient>
                   </defs>
-                  <path class="line-fill" d="M0,58 L27,52 L54,47 L81,43 L108,46 L135,38 L162,31 L189,26 L216,24 L243,18 L270,13 L297,7 L300,7 L300,70 L0,70 Z" fill="url(#lineGrad)" opacity="0"/>
-                  <path class="line-path" d="M0,58 L27,52 L54,47 L81,43 L108,46 L135,38 L162,31 L189,26 L216,24 L243,18 L270,13 L297,7" fill="none" stroke="#922C3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="297" cy="7" r="3" fill="#922C3E" opacity="0" class="line-dot"/>
+                  <path d="M0,36 L36,28 L73,20 L110,15 L146,10 L183,6 L220,2 L220,48 L0,48Z" fill="url(#cg1)"/>
+                  <path d="M0,36 L36,28 L73,20 L110,15 L146,10 L183,6 L220,2" fill="none" stroke="#922C3E" stroke-width="2" stroke-linecap="round"/>
                 </svg>
-                <div class="chart-x-labels">
-                  <span>Вер</span><span>Жов</span><span>Лис</span><span>Гру</span><span>Січ</span><span>Лют</span><span>Бер</span><span>Кві</span><span>Тра</span><span>Чер</span><span>Лип</span><span>Сер</span>
+              </div>
+              <div class="ct-results">
+                <div class="ct-r"><strong>8 → 1</strong><span>джерел</span></div>
+                <div class="ct-r"><strong>+23%</strong><span>виручка</span></div>
+                <div class="ct-r"><strong>–3год</strong><span>звітність</span></div>
+              </div>
+            </div>
+
+            <div class="case-tile">
+              <div class="ct-top">
+                <div class="ct-tag">Рітейл</div>
+                <div class="ct-year">2024</div>
+              </div>
+              <h3>Операційний дашборд — 40 магазинів</h3>
+              <p>Продажі 40 точок у реальному часі. Порівняння план/факт по кожному магазину і регіону на одному екрані.</p>
+              <div class="ct-chart">
+                <div class="ct-bars">
+                  <div class="ct-bar-item"><span>Київ</span><div class="ct-bt"><div class="ct-bf" style="width:92%"></div></div><em>₴3.2M</em></div>
+                  <div class="ct-bar-item"><span>Харків</span><div class="ct-bt"><div class="ct-bf" style="width:74%"></div></div><em>₴2.6M</em></div>
+                  <div class="ct-bar-item"><span>Одеса</span><div class="ct-bt"><div class="ct-bf" style="width:58%"></div></div><em>₴2.1M</em></div>
+                  <div class="ct-bar-item"><span>Дніпро</span><div class="ct-bt"><div class="ct-bf" style="width:44%"></div></div><em>₴1.6M</em></div>
                 </div>
               </div>
-              <div class="db-chart-card narrow">
-                <div class="db-chart-label">По каналах</div>
-                <div class="donut-wrap">
-                  <svg class="chart-donut" viewBox="0 0 80 80">
-                    <circle cx="40" cy="40" r="28" fill="none" stroke="#1E1518" stroke-width="12"/>
-                    <circle class="dseg s1" cx="40" cy="40" r="28" fill="none" stroke="#922C3E" stroke-width="12" stroke-dasharray="0 175.9" transform="rotate(-90 40 40)" stroke-linecap="round"/>
-                    <circle class="dseg s2" cx="40" cy="40" r="28" fill="none" stroke="#C44060" stroke-width="12" stroke-dasharray="0 175.9" transform="rotate(-90 40 40)" stroke-linecap="round"/>
-                    <circle class="dseg s3" cx="40" cy="40" r="28" fill="none" stroke="#4B9EFF" stroke-width="12" stroke-dasharray="0 175.9" transform="rotate(-90 40 40)" stroke-linecap="round"/>
-                    <text x="40" y="43" text-anchor="middle" fill="#EDE8E5" font-size="9" font-family="Inter" font-weight="600">45%</text>
-                  </svg>
-                  <div class="donut-legend">
-                    <div class="dl-item"><span class="dl-dot" style="background:#922C3E"></span>Сайт</div>
-                    <div class="dl-item"><span class="dl-dot" style="background:#C44060"></span>Маркет</div>
-                    <div class="dl-item"><span class="dl-dot" style="background:#4B9EFF"></span>Соцмережі</div>
+              <div class="ct-results">
+                <div class="ct-r"><strong>40</strong><span>точок live</span></div>
+                <div class="ct-r"><strong>Real-time</strong><span>оновлення</span></div>
+                <div class="ct-r"><strong>–40%</strong><span>час управл.</span></div>
+              </div>
+            </div>
+
+            <div class="case-tile">
+              <div class="ct-top">
+                <div class="ct-tag">HoReCa</div>
+                <div class="ct-year">2025</div>
+              </div>
+              <h3>P&L і Cashflow для мережі ресторанів</h3>
+              <p>5 закладів в одному звіті: P&L, cashflow, маржинальність по меню, ФОП, порівняння і прогноз.</p>
+              <div class="ct-chart">
+                <svg viewBox="0 0 220 48">
+                  <rect x="8" y="16" width="26" height="32" fill="#922C3E" rx="2" opacity=".7"/>
+                  <rect x="50" y="6" width="26" height="42" fill="#922C3E" rx="2" opacity=".85"/>
+                  <rect x="92" y="10" width="26" height="38" fill="#922C3E" rx="2"/>
+                  <rect x="134" y="2" width="26" height="46" fill="#C44060" rx="2"/>
+                  <rect x="176" y="4" width="26" height="44" fill="#C44060" rx="2"/>
+                </svg>
+              </div>
+              <div class="ct-results">
+                <div class="ct-r"><strong>5</strong><span>закладів</span></div>
+                <div class="ct-r"><strong>+12%</strong><span>маржа</span></div>
+                <div class="ct-r"><strong>NDA</strong><span>захищено</span></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="page-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Всі кейси показані з дозволу клієнтів або анонімізовані. Робота виконується під NDA.
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PAGE: Послуги ── -->
+      <div class="rpage" id="page-services">
+        <div class="rpage-scroll">
+          <div class="page-header">
+            <h2>Послуги</h2>
+            <p>Що я роблю і як це виглядає</p>
+          </div>
+          <div class="svc-grid">
+
+            <div class="svc-tile">
+              <div class="svc-n">01</div>
+              <div class="svc-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <h3>Аудит аналітики</h3>
+              <p>Діагностика поточного стану. Де ваші дані, як рахується виручка, де втрати часу і грошей.</p>
+              <ul>
+                <li>Аналіз всіх джерел даних</li>
+                <li>Огляд поточних звітів</li>
+                <li>Роадмап і рекомендації</li>
+              </ul>
+              <div class="svc-price">7 днів · Безкоштовно</div>
+            </div>
+
+            <div class="svc-tile featured">
+              <div class="svc-featured-chip">Основне</div>
+              <div class="svc-n">02</div>
+              <div class="svc-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </div>
+              <h3>Power BI Дашборд</h3>
+              <p>Від архітектури даних до готового дашборду. Під вашу бізнес-модель і ваші питання.</p>
+              <ul>
+                <li>Проектування моделі даних</li>
+                <li>Підключення джерел</li>
+                <li>Розробка і налаштування</li>
+                <li>Навчання команди</li>
+              </ul>
+              <div class="svc-price">Від 3 тижнів</div>
+            </div>
+
+            <div class="svc-tile">
+              <div class="svc-n">03</div>
+              <div class="svc-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <h3>Сервісна підтримка</h3>
+              <p>Постійна підтримка і розвиток BI-системи. Нові звіти, нові джерела, нові KPI.</p>
+              <ul>
+                <li>Щомісячна підтримка</li>
+                <li>Підключення джерел</li>
+                <li>Оновлення і розширення</li>
+              </ul>
+              <div class="svc-price">Щомісячно</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PAGE: Процес ── -->
+      <div class="rpage" id="page-process">
+        <div class="rpage-scroll">
+          <div class="page-header">
+            <h2>Процес</h2>
+            <p>Від хаосу в таблицях до рішень на основі даних</p>
+          </div>
+
+          <div class="process-flow">
+            <div class="pf-step">
+              <div class="pf-num">01</div>
+              <div class="pf-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3>Аудит</h3>
+              <p>Де ваші дані, як рахуються KPI, де протиріччя між відділами</p>
+              <div class="pf-time">7 днів</div>
+            </div>
+            <div class="pf-conn"><div class="pf-line"></div><div class="pf-arrow-ico">›</div></div>
+            <div class="pf-step">
+              <div class="pf-num">02</div>
+              <div class="pf-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+              </div>
+              <h3>Архітектура</h3>
+              <p>Модель даних, семантичний шар, KPI-ієрархія і plan of action</p>
+              <div class="pf-time">3–5 днів</div>
+            </div>
+            <div class="pf-conn"><div class="pf-line"></div><div class="pf-arrow-ico">›</div></div>
+            <div class="pf-step">
+              <div class="pf-num">03</div>
+              <div class="pf-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              </div>
+              <h3>Розробка</h3>
+              <p>Power BI дашборд ітеративно — з вашим фідбеком на кожному кроці</p>
+              <div class="pf-time">2–3 тижні</div>
+            </div>
+            <div class="pf-conn"><div class="pf-line"></div><div class="pf-arrow-ico">›</div></div>
+            <div class="pf-step">
+              <div class="pf-num">04</div>
+              <div class="pf-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </div>
+              <h3>Передача</h3>
+              <p>Навчаю команду, налаштовую автооновлення і сервісну підтримку</p>
+              <div class="pf-time">2 дні</div>
+            </div>
+          </div>
+
+          <div class="before-after">
+            <div class="ba-col before">
+              <div class="ba-label">До</div>
+              <div class="ba-items">
+                <div class="ba-item bad">10+ таблиць Excel</div>
+                <div class="ba-item bad">Звіт 3+ години щомісяця</div>
+                <div class="ba-item bad">Кожен відділ — своя версія</div>
+                <div class="ba-item bad">Рішення на відчутті</div>
+              </div>
+            </div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col after">
+              <div class="ba-label">Після</div>
+              <div class="ba-items">
+                <div class="ba-item good">Один дашборд — вся картина</div>
+                <div class="ba-item good">Дані оновлюються самі</div>
+                <div class="ba-item good">Одна версія правди</div>
+                <div class="ba-item good">Рішення за хвилини</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── PAGE: Контакт ── -->
+      <div class="rpage" id="page-contact">
+        <div class="rpage-scroll rpage-contact">
+          <div class="contact-wrap">
+            <div class="contact-card">
+              <div class="contact-badge">Старт — безкоштовно</div>
+              <h2>Аудит за 7 днів</h2>
+              <p>Покажіть мені ваші таблиці — я покажу де ховаються гроші і де ви втрачаєте час. Без зобов'язань.</p>
+              <div class="contact-btns">
+                <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="cbtn tg">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+                  Telegram
+                </a>
+                <a href="mailto:contact@novellum.co" class="cbtn email">contact@novellum.co</a>
+                <a href="https://linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="cbtn li">LinkedIn ↗</a>
+              </div>
+              <div class="contact-person">
+                <div class="cp-avatar">СК</div>
+                <div class="cp-info">
+                  <div class="cp-name">Сергій Кухарчук</div>
+                  <div class="cp-role">Power BI · Analytics · BI Strategy</div>
+                  <div class="cp-tags">
+                    <span>Power BI</span><span>DAX</span><span>Power Query</span><span>SQL</span><span>Azure</span>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="db-chart-card">
-              <div class="db-chart-label">Топ-5 категорій за виручкою</div>
-              <div class="chart-bars">
-                <div class="bar-item"><div class="bar-label">Електроніка</div><div class="bar-track"><div class="bar-fill" data-w="85"></div></div><div class="bar-val">₴842K</div></div>
-                <div class="bar-item"><div class="bar-label">Одяг</div><div class="bar-track"><div class="bar-fill" data-w="65"></div></div><div class="bar-val">₴631K</div></div>
-                <div class="bar-item"><div class="bar-label">Косметика</div><div class="bar-track"><div class="bar-fill" data-w="52"></div></div><div class="bar-val">₴504K</div></div>
-                <div class="bar-item"><div class="bar-label">Спорт</div><div class="bar-track"><div class="bar-fill" data-w="38"></div></div><div class="bar-val">₴369K</div></div>
-                <div class="bar-item"><div class="bar-label">Дім</div><div class="bar-track"><div class="bar-fill" data-w="28"></div></div><div class="bar-val">₴271K</div></div>
+              <div class="contact-links">
+                <a href="https://novellum.co" target="_blank" rel="noopener">novellum.co ↗</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Problem -->
-  <section class="pain" id="pain">
-    <div class="container">
-      <div class="section-tag">Впізнаєте?</div>
-      <h2 class="section-title">Дані є. Картини — немає.</h2>
-      <div class="pain-grid">
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 0 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          </div>
-          <h3>10+ таблиць Excel</h3>
-          <p>Дані розкидані по різних файлах. У кожного відділу своя версія цифр, і ніхто не знає яка правда.</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3>Звіт готується годинами</h3>
-          <p>Щомісяця одна й та сама рутина: вивантажити, склеїти, перерахувати, перевірити. Знову і знову.</p>
-        </div>
-        <div class="pain-card">
-          <div class="pain-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <h3>Рішення без цифр</h3>
-          <p>Стратегічні рішення приймаються на інтуїції, бо актуальні дані завжди десь запізнюються.</p>
-        </div>
+    </div><!-- /canvas-area -->
+
+    <!-- Fields panel (right, collapsible PBI style) -->
+    <div class="fields-panel" id="fieldsPanel">
+      <div class="fp-header">
+        <span>Поля</span>
+        <button class="fp-toggle" id="fpToggle" title="Закрити">×</button>
       </div>
-      <div class="pain-to-solution">
-        <div class="pts-arrow">↓</div>
-        <div class="solution-block">
-          <div class="solution-label">Після роботи зі мною</div>
-          <div class="solution-items">
-            <div class="sol-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Один дашборд — вся картина бізнесу в реальному часі
-            </div>
-            <div class="sol-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Дані оновлюються автоматично — без Excel і ручної роботи
-            </div>
-            <div class="sol-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Рішення приймаються за хвилини, а не дні
-            </div>
+      <div class="fp-section">
+        <div class="fp-table">
+          <div class="fp-table-name">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            Projects
           </div>
+          <div class="fp-field"><span class="fp-sum">Σ</span> Count</div>
+          <div class="fp-field"><span class="fp-sum">Σ</span> Revenue Impact</div>
+          <div class="fp-field"><span class="fp-abc">A</span> Industry</div>
+          <div class="fp-field"><span class="fp-abc">A</span> Client</div>
+        </div>
+        <div class="fp-table">
+          <div class="fp-table-name">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            Services
+          </div>
+          <div class="fp-field"><span class="fp-abc">A</span> Name</div>
+          <div class="fp-field"><span class="fp-sum">Σ</span> Duration</div>
+          <div class="fp-field"><span class="fp-abc">A</span> Type</div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Cases -->
-  <section class="cases" id="cases">
-    <div class="container">
-      <div class="section-tag">Портфоліо</div>
-      <h2 class="section-title">Реальні результати</h2>
-      <div class="cases-grid">
+  </div><!-- /app-body -->
 
-        <div class="case-card">
-          <div class="case-preview">
-            <div class="case-dash-mini">
-              <div class="cdm-header">E-commerce · Revenue Dashboard</div>
-              <div class="cdm-kpis">
-                <div class="cdm-kpi"><div class="cdm-val">₴2.4M</div><div class="cdm-d pos">↑23%</div></div>
-                <div class="cdm-kpi"><div class="cdm-val">1,847</div><div class="cdm-d pos">↑8%</div></div>
-                <div class="cdm-kpi"><div class="cdm-val">38%</div><div class="cdm-d pos">маржа</div></div>
-              </div>
-              <svg viewBox="0 0 220 55" class="cdm-chart">
-                <defs>
-                  <linearGradient id="cg1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#922C3E" stop-opacity="0.3"/>
-                    <stop offset="100%" stop-color="#922C3E" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,42 L36,35 L73,28 L110,24 L146,18 L183,12 L220,5 L220,55 L0,55 Z" fill="url(#cg1)"/>
-                <path d="M0,42 L36,35 L73,28 L110,24 L146,18 L183,12 L220,5" fill="none" stroke="#922C3E" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
-          </div>
-          <div class="case-body">
-            <div class="case-tag-chip">E-commerce · Київ</div>
-            <h3 class="case-title">Revenue Dashboard для онлайн-рітейлу</h3>
-            <p class="case-desc">Консолідація 8 джерел даних (Rozetka, Prom, власний сайт, склад, CRM). Єдина версія цифр для СЕО в режимі реального часу.</p>
-            <div class="case-results">
-              <div class="case-result"><strong>8 → 1</strong><span>джерело даних</span></div>
-              <div class="case-result"><strong>+23%</strong><span>виручка за квартал</span></div>
-              <div class="case-result"><strong>3 год → 0</strong><span>час на звітність</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-preview">
-            <div class="case-dash-mini">
-              <div class="cdm-header">Retail · Operations Dashboard</div>
-              <div class="cdm-kpis">
-                <div class="cdm-kpi"><div class="cdm-val">40</div><div class="cdm-d pos">магазини</div></div>
-                <div class="cdm-kpi"><div class="cdm-val">₴8.1M</div><div class="cdm-d pos">↑17%</div></div>
-                <div class="cdm-kpi"><div class="cdm-val">live</div><div class="cdm-d pos">дані</div></div>
-              </div>
-              <div class="cdm-bars">
-                <div class="cdm-bar"><div class="cdm-bar-fill" style="width:92%"></div><span>Київ</span></div>
-                <div class="cdm-bar"><div class="cdm-bar-fill" style="width:78%"></div><span>Харків</span></div>
-                <div class="cdm-bar"><div class="cdm-bar-fill" style="width:65%"></div><span>Одеса</span></div>
-                <div class="cdm-bar"><div class="cdm-bar-fill" style="width:51%"></div><span>Дніпро</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="case-body">
-            <div class="case-tag-chip">Рітейл · 40 точок</div>
-            <h3 class="case-title">Операційний дашборд для мережі магазинів</h3>
-            <p class="case-desc">Зведення продажів із 40 магазинів у режимі реального часу. Порівняння план/факт по кожній точці й регіону.</p>
-            <div class="case-results">
-              <div class="case-result"><strong>40</strong><span>магазинів онлайн</span></div>
-              <div class="case-result"><strong>Real-time</strong><span>оновлення</span></div>
-              <div class="case-result"><strong>–40%</strong><span>час на управління</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="case-card">
-          <div class="case-preview">
-            <div class="case-dash-mini">
-              <div class="cdm-header">Food & HoReCa · P&L Analytics</div>
-              <div class="cdm-kpis">
-                <div class="cdm-kpi"><div class="cdm-val">34.2%</div><div class="cdm-d pos">маржа</div></div>
-                <div class="cdm-kpi"><div class="cdm-val">₴520K</div><div class="cdm-d pos">чистий</div></div>
-                <div class="cdm-kpi"><div class="cdm-val">5</div><div class="cdm-d pos">заклади</div></div>
-              </div>
-              <svg viewBox="0 0 220 55" class="cdm-chart">
-                <rect x="8" y="18" width="24" height="37" fill="#922C3E" rx="2" opacity="0.7"/>
-                <rect x="48" y="8" width="24" height="47" fill="#922C3E" rx="2" opacity="0.85"/>
-                <rect x="88" y="12" width="24" height="43" fill="#922C3E" rx="2"/>
-                <rect x="128" y="4" width="24" height="51" fill="#C44060" rx="2"/>
-                <rect x="168" y="6" width="24" height="49" fill="#C44060" rx="2"/>
-              </svg>
-            </div>
-          </div>
-          <div class="case-body">
-            <div class="case-tag-chip">Food & HoReCa · Одеса</div>
-            <h3 class="case-title">P&L та cashflow аналітика для мережі ресторанів</h3>
-            <p class="case-desc">Фінансова аналітика по 5 закладах: P&L, cashflow, рентабельність по меню, зарплатний фонд, порівняння точок.</p>
-            <div class="case-results">
-              <div class="case-result"><strong>5</strong><span>закладів в одному</span></div>
-              <div class="case-result"><strong>+12%</strong><span>маржа за 6 міс.</span></div>
-              <div class="case-result"><strong>NDA</strong><span>конфіденційно</span></div>
-            </div>
-          </div>
-        </div>
-
+  <!-- Status bar -->
+  <div class="statusbar">
+    <div class="sb-left">
+      <span class="sb-page-name" id="sbPageName">Про мене</span>
+      <span class="sb-sep">·</span>
+      <span>Power BI Desktop</span>
+      <span class="sb-sep">·</span>
+      <span>Файл збережено</span>
+    </div>
+    <div class="sb-right">
+      <span id="sbPageNum">Сторінка 1 з 5</span>
+      <div class="sb-zoom">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        100%
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Services -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-tag">Послуги</div>
-      <h2 class="section-title">Що я роблю</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="svc-num">01</div>
-          <div class="svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-          </div>
-          <h3>Аудит аналітики</h3>
-          <p>Діагностика поточного стану даних і звітності. Що є, чого не вистачає, де втрати часу і грошей.</p>
-          <div class="svc-tag">7 днів · безкоштовно</div>
-        </div>
-        <div class="service-card featured">
-          <div class="svc-featured-badge">Основне</div>
-          <div class="svc-num">02</div>
-          <div class="svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-          <h3>Power BI Дашборд</h3>
-          <p>Розробка дашборду під вашу бізнес-модель. Від архітектури даних до готового продукту з підключеними джерелами.</p>
-          <div class="svc-tag">Від 3 тижнів</div>
-        </div>
-        <div class="service-card">
-          <div class="svc-num">03</div>
-          <div class="svc-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <h3>Сервісна підтримка</h3>
-          <p>Постійна підтримка, оновлення звітів, підключення нових джерел даних і розширення дашборду.</p>
-          <div class="svc-tag">Щомісячно</div>
-        </div>
-      </div>
-    </div>
-  </section>
+</div><!-- /app-shell -->
 
-  <!-- Process -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-tag">Як це працює</div>
-      <h2 class="section-title">4 кроки до аналітики</h2>
-      <div class="process-steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-connector-v"></div>
-          <div class="step-body">
-            <h3>Аудит даних</h3>
-            <p>Аналізую поточний стан: де ваші дані, як рахується виручка, що не сходиться між відділами.</p>
-            <div class="step-time">7 днів</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-connector-v"></div>
-          <div class="step-body">
-            <h3>Архітектура</h3>
-            <p>Проектую модель даних: джерела, трансформації, семантичний шар, KPI-ієрархія.</p>
-            <div class="step-time">3–5 днів</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-connector-v"></div>
-          <div class="step-body">
-            <h3>Розробка</h3>
-            <p>Будую дашборд у Power BI. Ітеративно, з вашим фідбеком на кожному кроці.</p>
-            <div class="step-time">2–3 тижні</div>
-          </div>
-        </div>
-        <div class="step last">
-          <div class="step-num">04</div>
-          <div class="step-body">
-            <h3>Передача</h3>
-            <p>Передаю дашборд, навчаю команду, налаштовую підтримку і автоматичне оновлення.</p>
-            <div class="step-time">2 дні</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Mobile nav (shows instead of sidebar on small screens) -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" class="mn-item active" data-page="home">Про мене</a>
+  <a href="#" class="mn-item" data-page="cases">Кейси</a>
+  <a href="#" class="mn-item" data-page="services">Послуги</a>
+  <a href="#" class="mn-item" data-page="process">Процес</a>
+  <a href="#" class="mn-item" data-page="contact">Контакт</a>
+</div>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-card">
-        <div class="about-left">
-          <div class="about-avatar">СК</div>
-          <div class="about-name">Сергій Кухарчук</div>
-          <div class="about-role">Power BI · Analytics · BI Strategy</div>
-          <div class="about-links">
-            <a href="https://www.linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="about-link">LinkedIn ↗</a>
-            <a href="https://novellum.co" target="_blank" rel="noopener" class="about-link">novellum.co ↗</a>
-            <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="about-link">Telegram ↗</a>
-          </div>
-        </div>
-        <div class="about-right">
-          <p>Я будую системи управлінської аналітики для власників малого та середнього бізнесу. Спеціалізація — e-commerce, рітейл, HoReCa, дистрибуція.</p>
-          <p>Мій підхід: не просто красиві графіки, а аналітика, яка допомагає приймати рішення. Кожен дашборд — це відповідь на конкретні питання вашого бізнесу. Я не зупиняюсь поки ви не скажете "я розумію свій бізнес краще".</p>
-          <div class="about-stack">
-            <span class="stack-tag">Power BI</span>
-            <span class="stack-tag">DAX</span>
-            <span class="stack-tag">Power Query</span>
-            <span class="stack-tag">SQL</span>
-            <span class="stack-tag">Azure</span>
-            <span class="stack-tag">Google Sheets</span>
-            <span class="stack-tag">PostgreSQL</span>
-            <span class="stack-tag">Excel</span>
-          </div>
-          <div class="about-nda">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Всі проекти виконуються під NDA. Кейси показані з дозволу клієнтів або анонімізовані.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
-    <div class="container">
-      <div class="cta-bg-glow"></div>
-      <div class="cta-card">
-        <div class="cta-label">Старт — безкоштовно</div>
-        <h2 class="cta-title">Аудит за 7 днів</h2>
-        <p class="cta-desc">Покажіть мені ваші таблиці — я покажу, де ховаються гроші і де ви втрачаєте час. Без зобов'язань.</p>
-        <div class="cta-actions">
-          <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="btn-primary-lg">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-            Написати в Telegram
-          </a>
-          <a href="mailto:contact@novellum.co" class="btn-ghost-lg">contact@novellum.co</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">Nóvellum</div>
-        <div class="footer-copy">© 2026 Сергій Кухарчук · Управлінська аналітика</div>
-        <a href="https://novellum.co" target="_blank" rel="noopener" class="footer-link">novellum.co ↗</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
