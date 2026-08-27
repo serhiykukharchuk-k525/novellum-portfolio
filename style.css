@@ -151,7 +151,11 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 /* ── Report pages ── */
 .rpage { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
 .rpage.active { opacity: 1; pointer-events: auto; }
-.rpage-scroll { height: 100%; overflow: hidden; padding: 28px 32px; }
+.rpage-scroll { height: 100%; overflow-y: auto; overflow-x: hidden; padding: 28px 32px; scrollbar-width: thin; scrollbar-color: rgba(59,18,24,0.15) transparent; }
+.rpage-scroll::-webkit-scrollbar { width: 4px; }
+.rpage-scroll::-webkit-scrollbar-track { background: transparent; }
+.rpage-scroll::-webkit-scrollbar-thumb { background: rgba(59,18,24,0.15); border-radius: 2px; }
+#page-pain .rpage-scroll { overflow: hidden; }
 
 /* ── Page header ── */
 .page-header { margin-bottom: 28px; }
