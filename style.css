@@ -481,10 +481,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
    PAGE 2: SOLUTION — Live dashboard
 ────────────────────────────────────── */
 .solution-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 32px; align-items: start;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .sh-badge {
   display: inline-flex; align-items: center; gap: 7px;
@@ -495,12 +492,12 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
   padding: 4px 12px; border-radius: 99px; margin-bottom: 14px;
 }
 .sh-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); }
-.sh-title { font-size: clamp(26px,3vw,40px); font-weight: 400; font-family: var(--serif); letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 10px; }
+.sh-title { font-size: clamp(22px,2.5vw,32px); font-weight: 400; font-family: var(--serif); letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 8px; }
 .grad {
   background: linear-gradient(135deg, #C44060 0%, #E8786A 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-.sh-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; max-width: 380px; }
+.sh-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; max-width: 500px; }
 .sh-stats { display: flex; gap: 20px; }
 .sh-stat { text-align: left; }
 .ss-val { font-size: 20px; font-weight: 700; color: var(--green-bright); font-family: var(--serif); letter-spacing: -0.02em; }

@@ -258,10 +258,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fpToggle.addEventListener('click', () => fpPanel.classList.toggle('collapsed'));
   }
 
-  // Ribbon tab click (visual only)
-  document.querySelectorAll('.ribbon-tab').forEach(tab => {
+  // Dashboard filter tabs
+  document.querySelectorAll('.ldt-filter').forEach(tab => {
     tab.addEventListener('click', () => {
-      document.querySelectorAll('.ribbon-tab').forEach(t => t.classList.remove('active'));
+      const group = tab.closest('.ld-toolbar');
+      group.querySelectorAll('.ldt-filter').forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
     });
   });
