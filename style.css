@@ -54,6 +54,16 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 }
 .tb-logo-link:hover { opacity: 1; }
 .tb-logo-svg { height: 20px; width: auto; }
+.tb-right { display: flex; align-items: center; justify-content: flex-end; }
+.tb-cta-mob {
+  display: none;
+  font-size: 11px; font-weight: 600; color: #fff;
+  background: rgba(146,44,62,0.8); border: 1px solid rgba(146,44,62,0.5);
+  padding: 4px 12px; border-radius: 4px;
+  text-decoration: none; letter-spacing: 0.01em;
+  transition: background 0.15s;
+}
+.tb-cta-mob:hover { background: rgba(146,44,62,1); }
 
 /* ── App body ── */
 .app-body { flex: 1; display: flex; overflow: hidden; }
@@ -782,49 +792,123 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 /* ── Mobile nav ── */
 .mobile-nav { display: none; }
 
-/* ── Responsive ── */
-@media (max-width: 900px) {
+/* ═══════════════════════════════════════════
+   TABLET  (≤ 1100px) — тільки звузити панелі
+   ═══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .pages-panel { width: 140px; }
+  .contact-widget { width: 200px; }
+  .cw-stats { display: none; }
+  .cw-stack { display: none; }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE  (≤ 768px) — повна мобільна версія
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
   html, body { overflow: auto; }
-  .app-shell { height: auto; min-height: 100vh; overflow: auto; }
-  .titlebar { display: none; }
-  .app-body { flex-direction: column; overflow: auto; }
+
+  .app-shell { height: auto; min-height: 100svh; overflow: visible; }
+
+  /* Titlebar: показуємо, адаптуємо */
+  .titlebar {
+    position: sticky; top: 0; z-index: 200;
+    grid-template-columns: 60px 1fr 60px;
+  }
+  .tb-filename { display: none; }
+  .tb-cta-mob { display: flex; }
+
+  /* Mobile nav під titlebar */
+  .mobile-nav {
+    display: flex;
+    position: sticky; top: 36px; z-index: 190;
+    background: rgba(251,248,243,0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto; gap: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .mobile-nav::-webkit-scrollbar { display: none; }
+  .mn-item {
+    flex-shrink: 0; padding: 11px 14px;
+    font-size: 13px; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .mn-item.active { color: var(--text); border-bottom-color: var(--brand); }
+
+  /* App body */
+  .app-body { flex-direction: column; overflow: visible; }
   .pages-panel { display: none; }
   .contact-widget { display: none; }
   .statusbar { display: none; }
-  .canvas-area { position: static; flex: none; height: auto; overflow: auto; }
+
+  /* Canvas */
+  .canvas-area { position: static; flex: none; height: auto; overflow: visible; }
   .rpage { position: static; opacity: 1 !important; pointer-events: auto; display: none; }
   .rpage.active { display: block; }
-  .rpage-scroll { height: auto; overflow: visible; padding: 20px 16px; }
+  .rpage-scroll { height: auto; overflow: visible !important; padding: 20px 16px; }
+  #page-pain .rpage-scroll { overflow: visible; }
+
+  /* Кнопки — достатньо великі для пальця */
+  .btn-brand-lg {
+    min-height: 48px; width: 100%; justify-content: center;
+    font-size: 13px; padding: 12px 20px;
+  }
+  .btn-outline-sm {
+    min-height: 44px; width: 100%; justify-content: center;
+    font-size: 13px; padding: 10px 20px;
+  }
+  .solution-cta { flex-direction: column; gap: 10px; }
+
+  /* Pain page */
   .pain-layout { grid-template-columns: 1fr; }
   .pain-left { position: static; }
   .broken-kpis { grid-template-columns: 1fr 1fr; }
-  .ld-kpis { grid-template-columns: 1fr 1fr; }
-  .ld-charts-row { grid-template-columns: 1fr; }
-  .solution-header { grid-template-columns: 1fr; }
-  .sh-author { width: 100%; }
+  .empty-chart-wrap { flex-direction: column; }
+  .pain-cta-bar { flex-direction: column; gap: 10px; text-align: center; }
+  .cost-calc { padding: 16px; }
+  .calc-results { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  /* Результат (solution) */
+  .sh-kpills { gap: 4px; }
+  .sh-title { font-size: 22px; }
+  .ld-kpis { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .ld-charts-row { grid-template-columns: 1fr; gap: 8px; }
+  .ldk-v { font-size: 16px; }
+  .chart-line { height: 70px; }
+  .live-dash { margin-bottom: 16px; }
+
+  /* Кейси */
   .versions-fight { flex-direction: column; }
   .vf-vs { transform: rotate(90deg); align-self: center; }
   .cases-grid { grid-template-columns: 1fr; }
-  .process-flow { grid-template-columns: 1fr; gap: 12px; }
+
+  /* Процес */
+  .process-flow { grid-template-columns: 1fr; gap: 10px; }
   .pf-conn { display: none; }
-  .process-about { flex-direction: column; }
+  .process-about { flex-direction: column; gap: 16px; }
   .pa-left { flex-direction: row; align-items: center; width: 100%; }
-  .contact-card { padding: 28px 24px; }
+
+  /* Контакт */
   .rpage-contact { min-height: auto; }
   .contact-wrap { min-height: auto; padding: 20px 0; }
-  .empty-chart-wrap { flex-direction: column; }
-  .pain-cta-bar { flex-direction: column; gap: 10px; text-align: center; }
-  .mobile-nav {
-    display: flex; position: sticky; top: 0; z-index: 100;
-    background: rgba(251,248,243,0.96); backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border); overflow-x: auto; gap: 0;
-  }
-  .mn-item {
-    flex-shrink: 0; padding: 12px 16px;
-    font-size: 13px; color: var(--muted); text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .mn-item:hover { color: var(--text); }
-  .mn-item.active { color: var(--text); border-bottom-color: var(--brand); }
+  .contact-card { padding: 24px 18px; }
+}
+
+/* ═══════════════════════════════════════════
+   SMALL  (≤ 420px) — маленькі телефони
+   ═══════════════════════════════════════════ */
+@media (max-width: 420px) {
+  .rpage-scroll { padding: 16px 14px; }
+  .sh-kpills { gap: 3px; }
+  .sh-pill { font-size: 10px; padding: 2px 6px 2px 5px; }
+  .ld-kpis { gap: 5px; }
+  .ldk-v { font-size: 15px; }
+  .ldb-l { width: 58px; font-size: 10px; }
+  .mn-item { padding: 10px 11px; font-size: 12px; }
+  .broken-kpis { grid-template-columns: 1fr 1fr; gap: 6px; }
 }
