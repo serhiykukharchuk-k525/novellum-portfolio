@@ -3,24 +3,25 @@
 html, body { width: 100%; height: 100%; overflow: hidden; }
 body { font-family: 'Fira Sans', system-ui, sans-serif; background: #1A1A1A; color: #E8E0DC; }
 
-/* ── Color tokens (aligned with novellum.co brand) ── */
+/* ── Color tokens — exact novellum.co brand hierarchy ── */
+/* prod: --brand:#3B1218 --brand-2:#571A24 --brand-hi:#7A2333 --bronze-bright:#922C3E */
 :root {
   --chrome: #211A1C;
   --chrome-deep: #180F11;
   --chrome-hi: #2A1F21;
   --border: rgba(232,224,220,0.08);
-  /* Brand hierarchy: #3B1218 → #571A24 → #7A2333 → #922C3E */
-  --brand-deep: #3B1218;
-  --brand: #922C3E;
-  --brand-hi: #B83652;
-  --brand-mid: #7A2333;
+  --brand-deep: #3B1218;   /* prod --brand */
+  --brand-2:    #571A24;   /* prod --brand-2 / --bronze-deep */
+  --brand-mid:  #7A2333;   /* prod --brand-hi / --bronze / --brass */
+  --brand-hi:   #922C3E;   /* prod --bronze-bright — hover/gradient accent */
+  --brand:      #922C3E;   /* prod --bronze-bright — main interactive accent */
   --brand-glow: rgba(146,44,62,0.28);
   --text: #E8E0DC;
   --muted: rgba(232,224,220,0.58);
   --faint: rgba(232,224,220,0.32);
-  --green: #2E7D57;
+  --green: #2E7D57;        /* prod --green-pos */
   --green-bright: #3DD68C;
-  --red: #C25B4F;
+  --red: #C25B4F;          /* prod --red-neg */
   --red-bright: #E05252;
   --canvas: #14100F;
   --serif: 'Cormorant Garamond', Georgia, serif;
