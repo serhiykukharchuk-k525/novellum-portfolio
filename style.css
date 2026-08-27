@@ -501,6 +501,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
   border-radius: 0 3px 3px 0;
 }
 .sh-pill.green { color: var(--green-bright); background: rgba(46,125,87,0.05); border-left-color: var(--green-bright); }
+.sh-pill.brand { color: var(--brand-hi); background: rgba(146,44,62,0.05); border-left-color: var(--brand-hi); font-weight: 500; }
 .sh-bottom { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
 .sh-title { font-size: clamp(20px,2.2vw,28px); font-weight: 400; font-family: var(--serif); letter-spacing: -0.01em; line-height: 1.2; margin: 0; }
 .grad {
