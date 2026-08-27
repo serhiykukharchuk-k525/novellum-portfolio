@@ -252,8 +252,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Fields panel toggle
-  const fpToggle = document.getElementById('fpToggle');
-  const fpPanel  = document.getElementById('fieldsPanel');
+  const fpToggle = document.getElementById('cwToggle');
+  const fpPanel  = document.getElementById('contactWidget');
   if (fpToggle && fpPanel) {
     fpToggle.addEventListener('click', () => fpPanel.classList.toggle('collapsed'));
   }
