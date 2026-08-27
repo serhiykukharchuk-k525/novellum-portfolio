@@ -247,7 +247,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
   border-radius: 6px; padding: 10px;
 }
 .cr-label { font-size: 10px; color: var(--faint); margin-bottom: 3px; }
-.cr-value { font-size: 20px; font-weight: 500; font-family: var(--serif); line-height: 1; margin-bottom: 2px; }
+.cr-value { font-size: 28px; font-weight: 500; font-family: var(--serif); line-height: 1; margin-bottom: 2px; letter-spacing: -0.02em; }
 .cr-value.red { color: var(--red-bright); }
 .cr-sub { font-size: 10px; color: var(--faint); }
 .calc-cta {
@@ -309,7 +309,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
   border-color: rgba(255,160,0,0.2);
 }
 .bkpi-l { font-size: 10px; color: var(--faint); margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bkpi-v { font-size: 20px; font-weight: 700; margin-bottom: 4px; color: var(--text); line-height: 1.2; }
+.bkpi-v { font-size: 24px; font-weight: 500; font-family: var(--serif); margin-bottom: 4px; color: var(--text); line-height: 1.1; letter-spacing: -0.01em; }
 .bkpi.err .bkpi-v { color: var(--red); }
 .bkpi-v.grey { color: rgba(34,26,23,0.18); }
 .bkpi-v.ghost { color: rgba(34,26,23,0.12); }
@@ -777,7 +777,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; background: #FBF8F3; col
 .cw-divider { height: 1px; background: var(--border); margin: 0; }
 .cw-stats { display: flex; justify-content: space-between; }
 .cw-stat { text-align: center; }
-.cw-stat-val { font-size: 13px; font-weight: 700; color: var(--brand); }
+.cw-stat-val { font-size: 16px; font-weight: 500; font-family: var(--serif); color: var(--brand); line-height: 1; }
 .cw-stat-label { font-size: 9px; color: var(--faint); margin-top: 2px; }
 .cw-stack-label { font-size: 9px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .cw-stack { display: flex; flex-wrap: wrap; gap: 4px; }
