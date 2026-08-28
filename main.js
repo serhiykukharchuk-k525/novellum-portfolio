@@ -4,8 +4,18 @@ const pageNames = { pain:'Зараз', solution:'Результат', cases:'К�
 let current = 'pain';
 let animating = false;
 
+/* ── Fill viewport height reliably across mobile browsers ── */
+function fixShellHeight() {
+  const shell = document.getElementById('appShell');
+  if (shell) shell.style.height = window.innerHeight + 'px';
+}
+fixShellHeight();
+window.addEventListener('resize', fixShellHeight);
+window.addEventListener('orientationchange', fixShellHeight);
+
 /* ── App open animation ── */
 window.addEventListener('load', () => {
+  fixShellHeight();
   const shell = document.getElementById('appShell');
   shell.style.transform = 'scale(0.4)';
   shell.style.opacity = '0';
