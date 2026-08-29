@@ -5,27 +5,22 @@ let current = 'pain';
 let animating = false;
 
 /* ── Responsive scale: zoom out desktop shell to fit narrow screens ── */
-let _shellScale = 1;
-
 function applyShellScale() {
   const shell = document.getElementById('appShell');
   if (!shell) return;
   const vw = window.innerWidth;
-  const vh = window.innerHeight;
 
   if (vw < 1280) {
-    _shellScale = vw / 1280;
+    const z = vw / 1280;
+    // screen.height = full device height (logical px), independent of browser chrome
     shell.style.width  = '1280px';
-    shell.style.height = Math.round(vh / _shellScale) + 'px';
-    shell.style.transformOrigin = 'top left';
+    shell.style.height = Math.ceil(window.screen.height / z) + 'px';
+    shell.style.zoom   = z;
   } else {
-    _shellScale = 1;
     shell.style.width  = '';
     shell.style.height = '';
-    shell.style.transformOrigin = '';
+    shell.style.zoom   = '';
   }
-  // Keep current non-opening transform (scale(1) or scale(_shellScale))
-  if (!shell._opening) shell.style.transform = _shellScale < 1 ? `scale(${_shellScale})` : '';
 }
 
 applyShellScale();
@@ -36,17 +31,14 @@ window.addEventListener('orientationchange', () => setTimeout(applyShellScale, 1
 window.addEventListener('load', () => {
   applyShellScale();
   const shell = document.getElementById('appShell');
-  shell._opening = true;
-  const s = _shellScale;
-  shell.style.transform = `scale(${0.4 * s})`;
+  shell.style.transform = 'scale(0.4)';
   shell.style.opacity = '0';
   shell.style.transition = 'transform 0.55s cubic-bezier(0.34,1.4,0.64,1), opacity 0.35s ease';
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      shell.style.transform = `scale(${s})`;
+      shell.style.transform = 'scale(1)';
       shell.style.opacity = '1';
       setTimeout(() => {
-        shell._opening = false;
         shell.style.transition = '';
         initBgCanvas();
       }, 600);
