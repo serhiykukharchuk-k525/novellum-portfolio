@@ -12,6 +12,13 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   justify-content: center;
   background: #3B1218;
 }
+@media (max-width: 768px) {
+  #shellViewport {
+    display: block;
+    height: auto;
+    background: transparent;
+  }
+}
 
 /* ── Color tokens — 1:1 novellum.co prod palette ── */
 /* https://novellum.co — --bg:#FBF8F3 --fg:#221A17 --brand:#3B1218 --bronze-bright:#922C3E */
