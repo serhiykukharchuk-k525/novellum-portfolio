@@ -6,19 +6,29 @@ let animating = false;
 
 /* ── Responsive scale: letterbox desktop shell on narrow screens ── */
 function applyShellScale() {
-  const shell = document.getElementById('appShell');
+  const viewport = document.getElementById('shellViewport');
+  const shell    = document.getElementById('appShell');
   if (!shell) return;
+
   const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  // Viewport always fills the visible window
+  if (viewport) {
+    viewport.style.width  = vw + 'px';
+    viewport.style.height = vh + 'px';
+  }
 
   if (vw < 1280) {
     const z = vw / 1280;
-    shell.style.width       = '1280px';
-    shell.style.height      = '820px';
-    shell.style.zoom        = z;
-    shell.style.flexShrink  = '0';
+    shell.style.width      = '1280px';
+    shell.style.height     = '820px';
+    shell.style.zoom       = z;
+    shell.style.flexShrink = '0';
   } else {
-    shell.style.width      = '';
-    shell.style.height     = '';
+    // Desktop: shell fills viewport naturally via CSS (100vw × 100vh)
+    shell.style.width      = vw + 'px';
+    shell.style.height     = vh + 'px';
     shell.style.zoom       = '';
     shell.style.flexShrink = '';
   }
