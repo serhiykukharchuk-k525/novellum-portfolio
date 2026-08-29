@@ -7,11 +7,18 @@ let animating = false;
 /* ── Fill viewport height reliably across mobile browsers ── */
 function fixShellHeight() {
   const shell = document.getElementById('appShell');
-  if (shell) shell.style.height = window.innerHeight + 'px';
+  if (!shell) return;
+  // With width=1280 viewport meta, innerHeight is in unscaled device px on mobile;
+  // multiply by the scale ratio to get the correct CSS viewport height.
+  let h = window.innerHeight;
+  if (window.innerWidth > window.screen.width) {
+    h = Math.round(window.screen.height * (window.innerWidth / window.screen.width));
+  }
+  shell.style.height = h + 'px';
 }
 fixShellHeight();
 window.addEventListener('resize', fixShellHeight);
-window.addEventListener('orientationchange', fixShellHeight);
+window.addEventListener('orientationchange', () => setTimeout(fixShellHeight, 100));
 
 /* ── App open animation ── */
 window.addEventListener('load', () => {
