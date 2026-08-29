@@ -666,19 +666,28 @@
       ══════════════════════════════════════ -->
       <div class="rpage" id="page-contact">
         <div class="rpage-scroll rpage-contact">
-          <div class="contact-wrap">
-            <div class="contact-card">
+          <div class="contact-wrap contact-wrap-2col">
+
+            <!-- Left: Form -->
+            <div class="contact-form-col">
               <div class="contact-badge">Старт — безкоштовно</div>
-              <h2>Аудит за 7 днів</h2>
-              <p>Покажіть мені ваші таблиці — я покажу де ховаються гроші і де ви втрачаєте час. Без зобов'язань і передоплати.</p>
-              <div class="contact-btns">
-                <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="cbtn tg">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
-                  Telegram
-                </a>
-                <a href="mailto:contact@novellum.co" class="cbtn email">contact@novellum.co</a>
-                <a href="https://linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="cbtn li">LinkedIn ↗</a>
-              </div>
+              <h2 class="contact-form-title">Аудит за 7 днів</h2>
+              <p class="contact-form-desc">Покажіть мені ваші таблиці — я покажу де ховаються гроші і де ви втрачаєте час. Без зобов'язань і передоплати.</p>
+
+              <form id="contactForm" class="cf" data-webhook="https://script.google.com/macros/s/AKfycbySPKR0R4G3tvh5odFhTf5WssiVxL9FzD5_y7QJyh4dDD1l8osKFvJKAee1m-r_x4VB/exec">
+                <div class="cf-msg" id="cfMessage"></div>
+                <input type="text" name="name" placeholder="Ваше ім'я" required class="cf-input" />
+                <input type="text" name="company" placeholder="Бізнес / роль" class="cf-input" />
+                <input type="email" name="email" placeholder="Email" required class="cf-input" />
+                <input type="text" name="contact" placeholder="Телефон або Telegram (необов'язково)" class="cf-input" />
+                <textarea name="message" placeholder="Коротко про бізнес і задачу" class="cf-input cf-textarea"></textarea>
+                <button type="submit" class="cf-submit" id="cfSubmit">Надіслати запит на аудит →</button>
+                <div class="cf-terms">Або напишіть напряму: <a href="mailto:contact@novellum.co">contact@novellum.co</a></div>
+              </form>
+            </div>
+
+            <!-- Right: Info -->
+            <div class="contact-info-col">
               <div class="contact-person">
                 <div class="cp-avatar">СК</div>
                 <div class="cp-info">
@@ -687,12 +696,27 @@
                   <div class="cp-tags"><span>E-commerce</span><span>Рітейл</span><span>HoReCa</span><span>NDA</span></div>
                 </div>
               </div>
-              <div class="contact-footer">
+              <div class="cinfo-stats">
+                <div class="cinfo-stat"><strong>40+</strong><span>проектів</span></div>
+                <div class="cinfo-stat"><strong>7</strong><span>днів аудит</span></div>
+                <div class="cinfo-stat"><strong>NDA</strong><span>конфіденційно</span></div>
+              </div>
+              <div class="cinfo-btns">
+                <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="cbtn tg">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+                  Telegram
+                </a>
+                <a href="https://linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="cbtn li">LinkedIn ↗</a>
+              </div>
+              <div class="cinfo-respond">
+                <div class="cinfo-dot"></div>
+                Відповідаю за 2–4 год · Київ, Україна
+              </div>
+              <div class="contact-footer" style="justify-content:flex-start;margin-top:auto">
                 <a href="https://novellum.co" target="_blank">novellum.co ↗</a>
-                <span>·</span>
-                <span>Київ, Україна · Робота з усім світом</span>
               </div>
             </div>
+
           </div>
         </div>
       </div>
