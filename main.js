@@ -375,5 +375,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initSlicers();
   initCalculator();
+  initContactForm();
   updateStatusBar('pain');
 });
+
+/* ── Contact form ── */
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const submitBtn = document.getElementById('cfSubmit');
+  const msgEl    = document.getElementById('cfMessage');
+
+  function showMsg(type, text) {
+    msgEl.className = 'cf-msg ' + type;
+    msgEl.textContent = text;
+    msgEl.style.display = 'block';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgEl.style.display = 'none';
+    const webhook = (form.dataset.webhook || '').trim();
+    if (!webhook) { showMsg('error', 'Форма тимчасово недоступна. Напишіть на contact@novellum.co'); return; }
+
+    const body = new URLSearchParams();
+    for (const [k, v] of new FormData(form).entries()) body.append(k, String(v));
+    body.append('page', 'portfolio');
+    body.append('clientTimestamp', new Date().toISOString());
+    body.append('referrer', document.referrer || '');
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Надсилаємо…';
+
+    try {
+      await fetch(webhook, { method: 'POST', mode: 'no-cors', body });
+      form.reset();
+      showMsg('success', '✓ Дякуємо. Напишу вам протягом кількох годин.');
+    } catch {
+      showMsg('error', 'Не вдалося надіслати. Напишіть напряму: contact@novellum.co');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Надіслати запит на аудит →';
+    }
+  });
+}
