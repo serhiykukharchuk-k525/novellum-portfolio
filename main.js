@@ -4,7 +4,7 @@ const pageNames = { pain:'Зараз', solution:'Результат', cases:'К�
 let current = 'pain';
 let animating = false;
 
-/* ── Responsive scale: zoom out desktop shell to fit narrow screens ── */
+/* ── Responsive scale: letterbox desktop shell on narrow screens ── */
 function applyShellScale() {
   const shell = document.getElementById('appShell');
   if (!shell) return;
@@ -12,14 +12,15 @@ function applyShellScale() {
 
   if (vw < 1280) {
     const z = vw / 1280;
-    // screen.height = full device height (logical px), independent of browser chrome
-    shell.style.width  = '1280px';
-    shell.style.height = Math.ceil(window.screen.height / z) + 'px';
-    shell.style.zoom   = z;
+    shell.style.width       = '1280px';
+    shell.style.height      = '820px';
+    shell.style.zoom        = z;
+    shell.style.flexShrink  = '0';
   } else {
-    shell.style.width  = '';
-    shell.style.height = '';
-    shell.style.zoom   = '';
+    shell.style.width      = '';
+    shell.style.height     = '';
+    shell.style.zoom       = '';
+    shell.style.flexShrink = '';
   }
 }
 
