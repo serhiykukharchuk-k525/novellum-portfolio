@@ -4,34 +4,49 @@ const pageNames = { pain:'Зараз', solution:'Результат', cases:'К�
 let current = 'pain';
 let animating = false;
 
-/* ── Fill viewport height reliably across mobile browsers ── */
-function fixShellHeight() {
+/* ── Responsive scale: zoom out desktop shell to fit narrow screens ── */
+let _shellScale = 1;
+
+function applyShellScale() {
   const shell = document.getElementById('appShell');
   if (!shell) return;
-  // With width=1280 viewport meta, innerHeight is in unscaled device px on mobile;
-  // multiply by the scale ratio to get the correct CSS viewport height.
-  let h = window.innerHeight;
-  if (window.innerWidth > window.screen.width) {
-    h = Math.round(window.screen.height * (window.innerWidth / window.screen.width));
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  if (vw < 1280) {
+    _shellScale = vw / 1280;
+    shell.style.width  = '1280px';
+    shell.style.height = Math.round(vh / _shellScale) + 'px';
+    shell.style.transformOrigin = 'top left';
+  } else {
+    _shellScale = 1;
+    shell.style.width  = '';
+    shell.style.height = '';
+    shell.style.transformOrigin = '';
   }
-  shell.style.height = h + 'px';
+  // Keep current non-opening transform (scale(1) or scale(_shellScale))
+  if (!shell._opening) shell.style.transform = _shellScale < 1 ? `scale(${_shellScale})` : '';
 }
-fixShellHeight();
-window.addEventListener('resize', fixShellHeight);
-window.addEventListener('orientationchange', () => setTimeout(fixShellHeight, 100));
+
+applyShellScale();
+window.addEventListener('resize', applyShellScale);
+window.addEventListener('orientationchange', () => setTimeout(applyShellScale, 120));
 
 /* ── App open animation ── */
 window.addEventListener('load', () => {
-  fixShellHeight();
+  applyShellScale();
   const shell = document.getElementById('appShell');
-  shell.style.transform = 'scale(0.4)';
+  shell._opening = true;
+  const s = _shellScale;
+  shell.style.transform = `scale(${0.4 * s})`;
   shell.style.opacity = '0';
   shell.style.transition = 'transform 0.55s cubic-bezier(0.34,1.4,0.64,1), opacity 0.35s ease';
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      shell.style.transform = 'scale(1)';
+      shell.style.transform = `scale(${s})`;
       shell.style.opacity = '1';
       setTimeout(() => {
+        shell._opening = false;
         shell.style.transition = '';
         initBgCanvas();
       }, 600);
