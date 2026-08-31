@@ -1009,6 +1009,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .pain-layout { grid-template-columns: 1fr; }
   .pain-left { position: static; }
   .broken-kpis { grid-template-columns: 1fr 1fr; }
+  #pain-hours .broken-kpis { grid-template-columns: 1fr 1fr 1fr; }
+  #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1; text-align: center; }
   .empty-chart-wrap { flex-direction: column; }
   .pain-cta-bar { flex-wrap: wrap; gap: 6px; }
   .pcb-text { font-size: 12px; flex: 1; min-width: 0; }
@@ -1068,4 +1070,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .ldb-l { width: 58px; font-size: 10px; }
   .mn-item { padding: 10px 11px; font-size: 12px; }
   .broken-kpis { grid-template-columns: 1fr 1fr; gap: 6px; }
+  #pain-hours .broken-kpis { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1; }
+  #pain-hours .bkpi-v.hours-val { font-size: 14px; }
 }
