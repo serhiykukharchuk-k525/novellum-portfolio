@@ -1030,7 +1030,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .live-dash { margin-bottom: 16px; }
 
   /* Кейси */
-  .versions-fight { flex-direction: column; }
+  .versions-fight { flex-direction: column; align-items: stretch; }
+  .vf-source { width: 100%; box-sizing: border-box; }
   .vf-vs { transform: rotate(90deg); align-self: center; }
   .cases-grid { grid-template-columns: 1fr; }
 
