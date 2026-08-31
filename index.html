@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Сергій Кухарчук · Power BI Portfolio</title>
+  <title>Novellum · Управлінська аналітика</title>
   <meta name="description" content="Power BI аналітика для власників бізнесу. Від хаосу в таблицях до рішень на основі даних.">
   <!-- Fira Sans: self-hosted from novellum-site prod repo (exact same files as novellum.co) -->
   <style>
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-ext-300.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-300.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-latin-300.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-ext-400.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-400.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-latin-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-ext-600.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-600.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-latin-600.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-ext-700.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-700.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-latin-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:800;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-ext-800.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:800;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-cyrillic-800.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:800;font-display:optional;src:url('https://raw.githubusercontent.com/serhiykukharchuk-k525/novellum-site/main/assets/fonts/fira-sans-latin-800.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-ext-300.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-300.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:optional;src:url('assets/fonts/fira-sans-latin-300.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-ext-400.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-400.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('assets/fonts/fira-sans-latin-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-ext-600.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-600.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('assets/fonts/fira-sans-latin-600.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-ext-700.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-700.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('assets/fonts/fira-sans-latin-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:800;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-ext-800.woff2') format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:800;font-display:optional;src:url('assets/fonts/fira-sans-cyrillic-800.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:800;font-display:optional;src:url('assets/fonts/fira-sans-latin-800.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
   </style>
   <!-- Cormorant Garamond — used for logo wordmark, headings, large numerals -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -131,6 +131,7 @@
           <div class="pp-name">Контакт</div>
         </div>
 
+      <div class="pp-hint">↑ клікайте на сторінки</div>
       </div>
     </div>
 
@@ -177,42 +178,6 @@
                 </div>
               </div>
 
-              <!-- Cost calculator -->
-              <div class="cost-calc" id="costCalc">
-                <div class="calc-title">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7h8M8 12h8M8 17h5"/></svg>
-                  Калькулятор втрат
-                </div>
-                <div class="calc-row">
-                  <label>Год/міс на звітність</label>
-                  <div class="calc-slider-wrap">
-                    <input type="range" min="1" max="30" value="5" id="hoursSlider" class="calc-slider">
-                    <span class="calc-val" id="hoursVal">5 год</span>
-                  </div>
-                </div>
-                <div class="calc-row">
-                  <label>Вартість год (₴)</label>
-                  <div class="calc-slider-wrap">
-                    <input type="range" min="200" max="2000" step="100" value="500" id="rateSlider" class="calc-slider">
-                    <span class="calc-val" id="rateVal">₴500</span>
-                  </div>
-                </div>
-                <div class="calc-results">
-                  <div class="calc-result-item">
-                    <div class="cr-label">За рік ви витрачаєте</div>
-                    <div class="cr-value red" id="calcYearCost">₴30,000</div>
-                    <div class="cr-sub" id="calcYearHours">60 год на ручну звітність</div>
-                  </div>
-                  <div class="calc-result-item">
-                    <div class="cr-label">За 3 роки</div>
-                    <div class="cr-value red" id="calc3YearCost">₴90,000</div>
-                    <div class="cr-sub">витрачено на рутину замість рішень</div>
-                  </div>
-                </div>
-                <div class="calc-cta" data-goto="contact">
-                  Хочу це виправити →
-                </div>
-              </div>
             </div>
 
             <!-- Right: Broken dashboard (their current reality) -->
@@ -387,6 +352,48 @@
                 </div>
               </div>
 
+              <!-- Cost calculator (full width) -->
+              <div class="cost-calc-full" id="costCalc">
+                <div class="ccf-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 7h8M8 12h8M8 17h5"/></svg>
+                  Скільки коштує ручна звітність?
+                </div>
+                <div class="ccf-body">
+                  <div class="ccf-sliders">
+                    <div class="ccf-row">
+                      <label>Годин на місяць на звітність</label>
+                      <div class="calc-slider-wrap">
+                        <input type="range" min="1" max="30" value="5" id="hoursSlider" class="calc-slider">
+                        <span class="calc-val" id="hoursVal">5 год</span>
+                      </div>
+                    </div>
+                    <div class="ccf-row">
+                      <label>Вартість вашої години (₴)</label>
+                      <div class="calc-slider-wrap">
+                        <input type="range" min="200" max="2000" step="100" value="500" id="rateSlider" class="calc-slider">
+                        <span class="calc-val" id="rateVal">₴500</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ccf-results">
+                    <div class="ccf-result">
+                      <div class="ccr-label">За рік</div>
+                      <div class="ccr-value" id="calcYearCost">₴30,000</div>
+                      <div class="ccr-sub" id="calcYearHours">60 год на ручну роботу</div>
+                    </div>
+                    <div class="ccf-divider"></div>
+                    <div class="ccf-result">
+                      <div class="ccr-label">За 3 роки</div>
+                      <div class="ccr-value" id="calc3YearCost">₴90,000</div>
+                      <div class="ccr-sub">витрачено замість рішень</div>
+                    </div>
+                    <div class="ccf-cta-wrap">
+                      <button class="ccf-cta" data-goto="contact">Хочу це виправити →</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Bottom CTA -->
               <div class="pain-cta-bar">
                 <div class="pcb-text">Це можна виправити за 7 днів аудиту</div>
@@ -410,11 +417,8 @@
                 <span class="sh-pill brand">Той самий бізнес · Ті самі дані</span>
                 <span class="sh-pill green">–95% часу на звітність</span>
                 <span class="sh-pill">1 версія правди</span>
-                <span class="sh-pill">Real-time дані</span>
-                <span class="sh-pill">40+ дашбордів в продакшні</span>
-                <span class="sh-pill">E-commerce · Retail · HoReCa · Дистрибуція</span>
-                <span class="sh-pill">7 днів від даних до рішення</span>
-                <span class="sh-pill">max 5 проєктів одночасно</span>
+                <span class="sh-pill">Рішення замість звітів</span>
+                <span class="sh-pill">7 днів від даних до результату</span>
               </div>
             </div>
             <div class="sh-bottom">
@@ -531,8 +535,8 @@
       <div class="rpage" id="page-cases">
         <div class="rpage-scroll">
           <div class="page-header">
-            <h2>Реальні кейси</h2>
-            <p>Проекти з реальними клієнтами · Реальні цифри до і після</p>
+            <h2>Кейси</h2>
+            <p>Проекти під NDA · Цифри до і після</p>
           </div>
           <div class="cases-grid">
 
@@ -694,7 +698,7 @@
               <form id="contactForm" class="cf" data-webhook="https://script.google.com/macros/s/AKfycbySPKR0R4G3tvh5odFhTf5WssiVxL9FzD5_y7QJyh4dDD1l8osKFvJKAee1m-r_x4VB/exec">
                 <div class="cf-msg" id="cfMessage"></div>
                 <input type="text" name="name" placeholder="Ваше ім'я" required class="cf-input" />
-                <input type="email" name="email" placeholder="Email або Telegram" required class="cf-input" />
+                <input type="text" name="email" placeholder="Email або Telegram" required class="cf-input" />
                 <textarea name="message" placeholder="Коротко про бізнес і задачу" class="cf-input cf-textarea"></textarea>
                 <button type="submit" class="cf-submit" id="cfSubmit">Надіслати запит на аудит →</button>
                 <div class="cf-terms">Або напишіть напряму: <a href="mailto:contact@novellum.co">contact@novellum.co</a></div>
@@ -717,18 +721,18 @@
                 <div class="cinfo-stat"><strong>NDA</strong><span>конфіденційно</span></div>
               </div>
               <div class="cinfo-btns">
+                <a href="https://linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="cbtn li">LinkedIn ↗</a>
                 <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="cbtn tg">
                   <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
                   Telegram
                 </a>
-                <a href="https://linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="cbtn li">LinkedIn ↗</a>
               </div>
               <div class="cinfo-respond">
                 <div class="cinfo-dot"></div>
                 Відповідаю за 2–4 год · Київ, Україна
               </div>
-              <div class="contact-footer" style="justify-content:flex-start;margin-top:auto">
-                <a href="https://novellum.co" target="_blank">novellum.co ↗</a>
+              <div class="contact-footer" style="justify-content:flex-start;margin-top:auto;font-size:11px;color:var(--faint)">
+                Не більше 5 проєктів одночасно — щоб кожен отримував повну увагу
               </div>
             </div>
 
@@ -761,13 +765,13 @@
         </div>
 
         <!-- CTA buttons -->
-        <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="cw-btn cw-btn-primary">
+        <a href="https://linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="cw-btn cw-btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="cw-btn cw-btn-outline">
           <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
           Telegram
-        </a>
-        <a href="mailto:contact@novellum.co" class="cw-btn cw-btn-outline">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
         </a>
 
         <div class="cw-divider"></div>
