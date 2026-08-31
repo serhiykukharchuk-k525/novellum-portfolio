@@ -1009,7 +1009,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .pain-left { position: static; }
   .broken-kpis { grid-template-columns: 1fr 1fr; }
   .empty-chart-wrap { flex-direction: column; }
-  .pain-cta-bar { flex-direction: column; gap: 10px; text-align: center; }
+  .pain-cta-bar { flex-wrap: wrap; gap: 6px; }
+  .pcb-text { font-size: 12px; flex: 1; min-width: 0; }
   .cost-calc { padding: 16px; }
   .calc-results { grid-template-columns: 1fr 1fr; gap: 8px; }
   .cost-calc-full { margin: 0 0 14px; padding: 14px 16px; }
