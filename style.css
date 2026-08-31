@@ -106,10 +106,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .pp-item {
   border-radius: 6px; padding: 6px 6px 5px;
   cursor: pointer; transition: background 0.15s;
-  border: 1.5px solid transparent; position: relative;
+  position: relative;
 }
 .pp-item:hover { background: rgba(59,18,24,0.06); }
-.pp-item.active { background: rgba(146,44,62,0.12); border-color: var(--brand); }
+.pp-item.active { background: rgba(146,44,62,0.12); box-shadow: inset 0 0 0 1.5px var(--brand); }
 .pp-num { font-size: 9px; color: var(--faint); margin-bottom: 4px; }
 .pp-item.active .pp-num { color: var(--brand-hi); }
 
@@ -1009,6 +1009,12 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .pain-cta-bar { flex-direction: column; gap: 10px; text-align: center; }
   .cost-calc { padding: 16px; }
   .calc-results { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cost-calc-full { margin: 0 0 14px; padding: 14px 16px; }
+  .ccf-body { grid-template-columns: 1fr; gap: 14px; }
+  .ccf-results { flex-wrap: wrap; gap: 12px; }
+  .ccf-divider { display: none; }
+  .ccf-cta-wrap { margin-left: 0; width: 100%; }
+  .ccf-cta { width: 100%; text-align: center; }
 
   /* Результат (solution) */
   .sh-kpills { gap: 4px; }
