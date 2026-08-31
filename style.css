@@ -109,7 +109,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   position: relative;
 }
 .pp-item:hover { background: rgba(59,18,24,0.06); }
-.pp-item.active { background: rgba(146,44,62,0.12); box-shadow: inset 0 0 0 1.5px var(--brand); }
+.pp-item.active { background: rgba(146,44,62,0.12); outline: 1.5px solid var(--brand); outline-offset: -1.5px; }
 .pp-num { font-size: 9px; color: var(--faint); margin-bottom: 4px; }
 .pp-item.active .pp-num { color: var(--brand-hi); }
 
@@ -325,6 +325,12 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   transition: background 0.2s;
 }
 .ccf-cta:hover { background: var(--brand-hi); }
+.ccf-cta-link {
+  font-size: 12px; font-weight: 600; color: var(--brand-hi);
+  text-decoration: underline; text-underline-offset: 3px;
+  cursor: pointer; white-space: nowrap;
+}
+.ccf-cta-link:hover { color: var(--brand); }
 
 /* ── Right column: broken dashboard ── */
 .pain-right { display: flex; flex-direction: column; gap: 12px; }
@@ -944,8 +950,11 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
   html, body { overflow: auto; }
+  html { background: var(--canvas); }
+  body { background: var(--canvas); }
+  #bgCanvas { display: none; }
 
-  .app-shell { height: auto; min-height: 100svh; overflow: visible; }
+  .app-shell { height: auto; min-height: unset; overflow: visible; background: var(--canvas); }
 
   /* Titlebar: показуємо, адаптуємо */
   .titlebar {
@@ -1015,6 +1024,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .ccf-divider { display: none; }
   .ccf-cta-wrap { margin-left: 0; width: 100%; }
   .ccf-cta { width: 100%; text-align: center; }
+  .ldk-spark { height: 24px; }
 
   /* Результат (solution) */
   .sh-kpills { gap: 4px; }
