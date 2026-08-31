@@ -35,8 +35,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   --brand:      #922C3E;   /* prod --bronze-bright — main accent */
   --brand-glow: rgba(146,44,62,0.15);
   --text:        #221A17;              /* prod --fg */
-  --muted:       rgba(34,26,23,0.62); /* prod --fg-muted */
-  --faint:       rgba(34,26,23,0.38); /* prod --fg-faint */
+  --muted:       rgba(34,26,23,0.72); /* prod --fg-muted */
+  --faint:       rgba(34,26,23,0.50); /* prod --fg-faint */
   --green:       #2E7D57;             /* prod --green-pos */
   --green-bright:#2E7D57;             /* same on light bg */
   --red:         #C25B4F;             /* prod --red-neg */
@@ -519,8 +519,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .blind-spots { background: rgba(59,18,24,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
 .bs-title { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 10px; }
 .bs-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
-.bs-item { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--muted); }
-.bs-icon { font-size: 16px; flex-shrink: 0; }
+.bs-item { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--muted); padding-left: 10px; border-left: 2px solid var(--brand-hi); }
 .bs-item strong { color: var(--text); display: block; margin-bottom: 1px; }
 .bs-item span { color: var(--faint); font-size: 11px; }
 
@@ -1010,7 +1009,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .pain-left { position: static; }
   .broken-kpis { grid-template-columns: 1fr 1fr; }
   #pain-hours .broken-kpis { grid-template-columns: 1fr 1fr 1fr; }
-  #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1; text-align: center; }
+  #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1 !important; text-align: center; }
   .empty-chart-wrap { flex-direction: column; }
   .pain-cta-bar { flex-wrap: wrap; gap: 6px; }
   .pcb-text { font-size: 12px; flex: 1; min-width: 0; }
@@ -1071,6 +1070,6 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .mn-item { padding: 10px 11px; font-size: 12px; }
   .broken-kpis { grid-template-columns: 1fr 1fr; gap: 6px; }
   #pain-hours .broken-kpis { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
-  #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1; }
+  #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1 !important; text-align: center; }
   #pain-hours .bkpi-v.hours-val { font-size: 14px; }
 }
