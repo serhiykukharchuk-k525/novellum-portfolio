@@ -687,6 +687,29 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .pf-conn { display: flex; align-items: flex-start; padding-top: 36px; flex-direction: column; align-items: center; width: 24px; }
 .pf-arrow-ico { font-size: 20px; color: var(--faint); line-height: 1; }
 
+/* Process tiers (Start / Ongoing) */
+.process-tiers {
+  display: flex; align-items: stretch; gap: 0;
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+  margin-bottom: 16px;
+}
+.pt-tier {
+  flex: 1; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px;
+}
+.pt-tier:first-child { border-right: 1px solid var(--border); }
+.pt-divider {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; flex-shrink: 0; font-size: 18px; color: var(--brand-hi);
+  background: rgba(146,44,62,0.05);
+}
+.pt-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--brand-hi); margin-bottom: 2px;
+}
+.pt-title { font-size: 13px; font-weight: 600; color: var(--text); }
+.pt-desc { font-size: 12px; color: var(--muted); line-height: 1.6; flex: 1; }
+.pt-time { font-size: 11px; color: var(--faint); margin-top: 4px; }
+
 /* Process about */
 .process-about {
   display: flex; gap: 24px; align-items: flex-start;
