@@ -1048,7 +1048,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .contact-wrap-2col { flex-direction: column; }
   .contact-form-col { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(146,44,62,0.18); }
   .contact-info-col { flex: none; padding: 20px 20px; }
-  .cinfo-btns { flex-direction: row; }
+  .cinfo-btns { flex-direction: column; }
+  .cinfo-btns .cbtn { width: 100%; box-sizing: border-box; }
+  .contact-btns { flex-direction: column; }
+  .contact-btns .cbtn { width: 100%; box-sizing: border-box; }
 }
 
 /* ═══════════════════════════════════════════
