@@ -938,9 +938,11 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
    ═══════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .pages-panel { width: 140px; }
-  .contact-widget { display: none; }
   /* ht-step grid layout unchanged at tablet */
 }
+
+/* Letterbox zoom mode (tablet/phone in desktop mode): hide contact-widget */
+.app-shell.letterbox .contact-widget { display: none; }
 
 /* ═══════════════════════════════════════════
    MOBILE  (≤ 768px) — повна мобільна версія
