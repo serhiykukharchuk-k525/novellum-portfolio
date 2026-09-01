@@ -172,7 +172,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .pp-item.active .pp-name { color: var(--text); font-weight: 500; }
 
 /* ── Canvas area ── */
-.canvas-area { flex: 1; min-width: 0; position: relative; overflow: hidden; background: var(--canvas); isolation: isolate; }
+.canvas-area { flex: 1 1 0%; min-width: 0; position: relative; overflow: hidden; background: var(--canvas); isolation: isolate; }
 #bgCanvas { position: absolute; inset: 0; pointer-events: none; z-index: 0; background: var(--canvas); }
 .page-load-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 20; overflow: hidden; }
 .plb-fill {
@@ -311,7 +311,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   font-size: 12px; font-weight: 600; color: var(--brand-hi);
   margin-bottom: 16px; letter-spacing: 0.04em;
 }
-.ccf-body { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.ccf-body { display: grid; grid-template-columns: 1fr auto auto; gap: 24px; align-items: center; }
 .ccf-sliders { display: flex; flex-direction: column; gap: 12px; }
 .ccf-row label { display: block; font-size: 11px; color: var(--faint); margin-bottom: 5px; }
 .ccf-hint { font-size: 10px; color: var(--faint); font-weight: 400; opacity: 0.8; }
@@ -321,7 +321,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .ccr-label { font-size: 10px; color: var(--faint); margin-bottom: 3px; }
 .ccr-value { font-size: 22px; font-weight: 700; color: var(--red-bright); line-height: 1; margin-bottom: 2px; }
 .ccr-sub { font-size: 10px; color: var(--faint); }
-.ccf-cta-wrap { margin-left: 8px; }
+.ccf-cta-wrap { }
 .ccf-cta {
   background: var(--brand); color: #fff;
   border: none; border-radius: 6px;
