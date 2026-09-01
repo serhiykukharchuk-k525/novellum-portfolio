@@ -184,13 +184,13 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 /* ── Report pages ── */
 .rpage { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
 .rpage.active { opacity: 1; pointer-events: auto; }
-.rpage-scroll { height: 100%; overflow-y: auto; overflow-x: clip; padding: 20px 28px; scrollbar-width: none; }
+.rpage-scroll { height: 100%; overflow-y: hidden; overflow-x: clip; padding: 14px 28px; scrollbar-width: none; }
 .rpage-scroll::-webkit-scrollbar { display: none; }
 #page-pain .rpage-scroll { overflow-y: auto; overflow-x: hidden; }
 .pain-layout { max-width: 100%; overflow: hidden; }
 
 /* ── Page header ── */
-.page-header { margin-bottom: 28px; }
+.page-header { margin-bottom: 16px; }
 .page-header h2 { font-size: 30px; font-weight: 400; font-family: var(--serif); letter-spacing: 0; margin-bottom: 4px; }
 .page-header p { font-size: 13px; color: var(--muted); }
 
@@ -580,7 +580,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   background: var(--surface);
   border: 1px solid rgba(146,44,62,0.25);
   border-radius: 10px; overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   box-shadow: 0 20px 40px rgba(59,18,24,0.12), 0 0 0 1px rgba(146,44,62,0.15);
 }
 .ld-header {
@@ -708,11 +708,11 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .process-flow {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-  gap: 0; align-items: start; margin-bottom: 24px;
+  gap: 0; align-items: start; margin-bottom: 14px;
 }
 .pf-step {
   background: rgba(59,18,24,0.05); border: 1px solid var(--border);
-  border-radius: 10px; padding: 20px;
+  border-radius: 10px; padding: 14px;
   transition: border-color 0.2s;
 }
 .pf-step:hover { border-color: rgba(146,44,62,0.35); }
@@ -729,10 +729,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .process-tiers {
   display: flex; align-items: stretch; gap: 0;
   border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 .pt-tier {
-  flex: 1; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px;
+  flex: 1; padding: 14px 20px; display: flex; flex-direction: column; gap: 6px;
 }
 .pt-tier:first-child { border-right: 1px solid var(--border); }
 .pt-divider {
@@ -750,9 +750,9 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 
 /* Process about */
 .process-about {
-  display: flex; gap: 24px; align-items: flex-start;
+  display: flex; gap: 20px; align-items: flex-start;
   background: rgba(59,18,24,0.04); border: 1px solid var(--border);
-  border-radius: 10px; padding: 24px;
+  border-radius: 10px; padding: 16px;
 }
 .pa-left { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; width: 100px; }
 .pa-avatar {
@@ -774,7 +774,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 
 /* ── CONTACT PAGE ── */
 .rpage-contact { display: flex; align-items: center; justify-content: center; }
-.contact-wrap { display: flex; justify-content: center; align-items: center; min-height: 100%; padding: 32px 24px; }
+.contact-wrap { display: flex; justify-content: center; align-items: center; height: 100%; padding: 16px 24px; }
 
 /* Two-column contact layout */
 .contact-wrap-2col {
@@ -784,13 +784,13 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   border-radius: 16px; overflow: hidden; position: relative;
 }
 .contact-form-col {
-  flex: 1 1 0; padding: 36px 40px;
+  flex: 1 1 0; padding: 24px 32px;
   border-right: 1px solid rgba(146,44,62,0.18);
   display: flex; flex-direction: column;
 }
 .contact-info-col {
-  flex: 0 0 240px; padding: 36px 28px;
-  display: flex; flex-direction: column; gap: 14px;
+  flex: 0 0 240px; padding: 24px 24px;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .contact-form-title { font-size: 26px; font-weight: 400; font-family: var(--serif); margin: 6px 0 8px; }
 .contact-form-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
@@ -937,6 +937,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
    ═══════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .app-body { grid-template-columns: 140px 1fr 200px; }
+  .rpage-scroll { overflow-y: auto; }
+  #page-pain .rpage-scroll { overflow-y: auto; }
 }
 
 
