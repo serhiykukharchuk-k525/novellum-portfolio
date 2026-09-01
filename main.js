@@ -19,7 +19,7 @@ function applyShellScale() {
     viewport.style.height = vh + 'px';
   }
 
-  if (vw >= 1280) {
+  if (vw >= 1100) {
     // Desktop: shell fills viewport via CSS
     shell.style.width = shell.style.height = shell.style.zoom = shell.style.flexShrink = '';
     shell.classList.remove('letterbox');
