@@ -184,7 +184,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 /* ── Report pages ── */
 .rpage { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
 .rpage.active { opacity: 1; pointer-events: auto; }
-.rpage-scroll { height: 100%; overflow-y: auto; overflow-x: clip; padding: 20px 28px; scrollbar-width: thin; scrollbar-color: rgba(59,18,24,0.15) transparent; }
+.rpage-scroll { height: 100%; overflow-y: auto; overflow-x: clip; padding: 20px 28px; scrollbar-width: thin; scrollbar-color: rgba(59,18,24,0.15) transparent; scrollbar-gutter: stable; }
 .rpage-scroll::-webkit-scrollbar { width: 4px; }
 .rpage-scroll::-webkit-scrollbar-track { background: transparent; }
 .rpage-scroll::-webkit-scrollbar-thumb { background: rgba(59,18,24,0.15); border-radius: 2px; }
@@ -208,7 +208,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 }
 
 /* ── Left column: slicer + calculator ── */
-.pain-left { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 0; }
+.pain-left { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 0; min-width: 0; overflow: hidden; }
 
 /* PBI slicer panel */
 .slicer-panel {
@@ -333,7 +333,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .ccf-cta:hover { background: var(--brand-hi); }
 
 /* ── Right column: broken dashboard ── */
-.pain-right { display: flex; flex-direction: column; gap: 12px; }
+.pain-right { display: flex; flex-direction: column; gap: 12px; min-width: 0; overflow: hidden; }
 
 .pain-dash-header {
   display: flex; align-items: center; justify-content: space-between;
