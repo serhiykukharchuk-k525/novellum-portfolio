@@ -22,7 +22,6 @@ function applyShellScale() {
   if (vw >= 1100) {
     // Desktop: shell fills viewport via CSS
     shell.style.width = shell.style.height = shell.style.zoom = shell.style.flexShrink = '';
-    shell.classList.remove('letterbox');
   } else if (vw > 768) {
     // Tablet: letterbox — zoom desktop layout to fit width, center vertically
     const z = vw / 1280;
@@ -30,11 +29,9 @@ function applyShellScale() {
     shell.style.height     = '820px';
     shell.style.zoom       = z;
     shell.style.flexShrink = '0';
-    shell.classList.add('letterbox');
   } else {
     // Phone (≤768px): mobile CSS handles layout, no zoom
     shell.style.width = shell.style.height = shell.style.zoom = shell.style.flexShrink = '';
-    shell.classList.remove('letterbox');
   }
 }
 
