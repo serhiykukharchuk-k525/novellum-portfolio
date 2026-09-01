@@ -1,6 +1,6 @@
 /* ── State ── */
-const pages = ['pain','solution','cases','process','contact'];
-const pageNames = { pain:'Зараз', solution:'Результат', cases:'Кейси', process:'Процес', contact:'Контакт' };
+const pages = ['pain','solution','cases','process','demo','partners','contact'];
+const pageNames = { pain:'Зараз', solution:'Результат', cases:'Кейси', process:'Процес', demo:'Демо', partners:'Партнери', contact:'Контакт' };
 let current = 'pain';
 let animating = false;
 

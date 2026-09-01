@@ -66,6 +66,8 @@
     <a href="#" class="mn-item" data-page="solution">Результат</a>
     <a href="#" class="mn-item" data-page="cases">Кейси</a>
     <a href="#" class="mn-item" data-page="process">Процес</a>
+    <a href="#" class="mn-item" data-page="demo">Демо</a>
+    <a href="#" class="mn-item" data-page="partners">Партнери</a>
     <a href="#" class="mn-item" data-page="contact">Контакти</a>
   </div>
 
@@ -124,8 +126,33 @@
           <div class="pp-name">Процес</div>
         </div>
 
-        <div class="pp-item" data-page="contact" data-name="Контакти" data-num="5">
+        <div class="pp-item" data-page="demo" data-name="Демо" data-num="5">
           <div class="pp-num">5</div>
+          <div class="pp-thumb pp-thumb-demo">
+            <div class="ppt-demo">
+              <div class="ppt-demo-bar"></div>
+              <div class="ppt-demo-screen">
+                <div class="ppt-demo-chart"></div>
+              </div>
+            </div>
+          </div>
+          <div class="pp-name">Демо</div>
+        </div>
+
+        <div class="pp-item" data-page="partners" data-name="Партнери" data-num="6">
+          <div class="pp-num">6</div>
+          <div class="pp-thumb pp-thumb-partners">
+            <div class="ppt-partners">
+              <div class="ppt-p-row"><div class="ppt-p-dot"></div><div class="ppt-p-dot"></div></div>
+              <div class="ppt-p-line"></div>
+              <div class="ppt-p-row"><div class="ppt-p-dot"></div><div class="ppt-p-dot"></div></div>
+            </div>
+          </div>
+          <div class="pp-name">Партнери</div>
+        </div>
+
+        <div class="pp-item" data-page="contact" data-name="Контакти" data-num="7">
+          <div class="pp-num">7</div>
           <div class="pp-thumb">
             <div class="ppt-contact"><div class="ppt-contact-box"></div></div>
           </div>
@@ -402,6 +429,18 @@
                 <div class="pcb-text">Це можна виправити</div>
                 <a class="pcb-link" data-goto="solution" href="#">Показати як виглядає результат →</a>
               </div>
+
+              <!-- FAQ: pain-relevant -->
+              <div class="pain-faq">
+                <div class="pfaq-item">
+                  <div class="pfaq-q">Що якщо у нас немає нормального обліку?</div>
+                  <div class="pfaq-a">Починаю з аудиту того, що є. Навіть Excel — робоча основа: впорядковую, фіксую логіку і будую дашборд поверх наявних даних.</div>
+                </div>
+                <div class="pfaq-item">
+                  <div class="pfaq-q">Чи потрібно платити за Power BI?</div>
+                  <div class="pfaq-a">Є кілька варіантів ліцензій — Desktop, Pro, Premium. Підберу оптимальний під ваш сценарій.</div>
+                </div>
+              </div>
             </div>
 
           </div>
@@ -657,6 +696,7 @@
               <div class="pt-label">Start</div>
               <div class="pt-title">Запуск системи аналітики</div>
               <div class="pt-desc">Аудит, проектування і перший робочий дашборд. Ви отримуєте систему, яка відповідає на ключові питання бізнесу.</div>
+              <div class="pt-price">від $2 000</div>
               <div class="pt-time">від 4 тижнів · фіксована ціна</div>
             </div>
             <div class="pt-divider">+</div>
@@ -664,6 +704,7 @@
               <div class="pt-label">Ongoing</div>
               <div class="pt-title">Підтримка в актуальному стані</div>
               <div class="pt-desc">Щомісячне оновлення, нові показники, адаптація під зміни в бізнесі. Система живе разом з вами, а не застаріває.</div>
+              <div class="pt-price">$1 500 / місяць</div>
               <div class="pt-time">щомісячна підписка · без прив'язки</div>
             </div>
           </div>
@@ -679,11 +720,128 @@
               <p>Спеціалізація — e-commerce, рітейл, HoReCa, дистрибуція. Паралельно веду не більше 5 проєктів — щоб зберегти якість і увагу до кожного клієнта. Всі проекти під NDA.</p>
             </div>
           </div>
+
+          <div class="process-faq">
+            <div class="pfaq-item">
+              <div class="pfaq-q">Скільки часу займає впровадження?</div>
+              <div class="pfaq-a">Аудит — 7 днів. Перший дашборд — 2–4 тижні залежно від складності даних. Терміни фіксуємо письмово до старту.</div>
+            </div>
+            <div class="pfaq-item">
+              <div class="pfaq-q">Що відбувається після здачі дашборду?</div>
+              <div class="pfaq-a">Переходжу в режим підтримки: стежу за якістю даних, оновлюю показники, додаю нові зрізи. Живий інструмент, не статичний звіт.</div>
+            </div>
+          </div>
+
+          <div class="process-cta">
+            <a href="#" class="pcta-btn" data-page="contact" onclick="event.preventDefault();goTo('contact')">Почати з аудиту — безкоштовно →</a>
+            <span class="pcta-note">7 днів · без зобов'язань · NDA до початку</span>
+          </div>
         </div>
       </div>
 
       <!-- ══════════════════════════════════════
-           PAGE 5: КОНТАКТ
+           PAGE 5: ДЕМО
+      ══════════════════════════════════════ -->
+      <div class="rpage" id="page-demo">
+        <div class="rpage-scroll rpage-demo">
+          <div class="demo-header">
+            <div class="demo-badge">Live · Power BI · Анонімні дані</div>
+            <h2>Демо дашборд — e-commerce</h2>
+            <p>Реальна структура управлінського дашборду на анонімізованих даних. Можна клікати, фільтрувати, дивитись логіку побудови.</p>
+          </div>
+          <div class="demo-frame-wrap">
+            <iframe
+              class="demo-iframe"
+              title="Nóvellum Demo Dashboard"
+              src="https://app.powerbi.com/view?r=eyJrIjoiYjM2MDJjMTEtNTk5Yi00MWM2LWExNzEtNTJhYTY5ZGFkZDcyIiwidCI6Ijc1Y2QyZWIwLWJlYWUtNGMzMS1hODYyLTQzNmQ5M2RmMmUzOCIsImMiOjl9"
+              frameborder="0"
+              allowfullscreen="true"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation">
+            </iframe>
+          </div>
+          <div class="demo-footer">
+            <a class="demo-open-link" href="https://app.powerbi.com/view?r=eyJrIjoiYjM2MDJjMTEtNTk5Yi00MWM2LWExNzEtNTJhYTY5ZGFkZDcyIiwidCI6Ijc1Y2QyZWIwLWJlYWUtNGMzMS1hODYyLTQzNmQ5M2RmMmUzOCIsImMiOjl9" target="_blank" rel="noopener">Відкрити на повний екран ↗</a>
+            <span class="demo-footer-sep">·</span>
+            <span class="demo-footer-note">Хочете такий для свого бізнесу?</span>
+            <a href="#" class="demo-cta-link" onclick="event.preventDefault();goTo('contact')">Написати →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           PAGE 6: ПАРТНЕРИ
+      ══════════════════════════════════════ -->
+      <div class="rpage" id="page-partners">
+        <div class="rpage-scroll rpage-partners">
+
+          <div class="page-header">
+            <h2>Партнерська програма</h2>
+            <p>Для тих, хто вже працює з першими особами бізнесу</p>
+          </div>
+
+          <div class="partners-grid">
+
+            <div class="partner-block">
+              <div class="pb-eyebrow">Кому підходить</div>
+              <div class="pb-items">
+                <div class="pb-item"><div class="pb-icon">→</div><div><strong>Стратегічні консультанти</strong> — дашборд як основа для розмови з власником</div></div>
+                <div class="pb-item"><div class="pb-icon">→</div><div><strong>Фінансові радники та CFO</strong> — єдина картина фінансів без різних версій цифр</div></div>
+                <div class="pb-item"><div class="pb-icon">→</div><div><strong>RevOps / CRM спеціалісти</strong> — аналітика поверх, без доступу до самої CRM</div></div>
+                <div class="pb-item"><div class="pb-icon">→</div><div><strong>ERP / 1С впроваджувачі</strong> — зрозуміла картина для власника поверх вашого обліку</div></div>
+              </div>
+            </div>
+
+            <div class="partner-block">
+              <div class="pb-eyebrow">Формати співпраці</div>
+              <div class="pb-formats">
+                <div class="pb-format">
+                  <div class="pbf-label">Referral</div>
+                  <div class="pbf-desc">Передаєте контакт — ми беремо всю аналітичну роботу на себе</div>
+                </div>
+                <div class="pb-format">
+                  <div class="pbf-label">Co-delivery</div>
+                  <div class="pbf-desc">Ви ведете свою частину проєкту, ми — аналітику і підтримку</div>
+                </div>
+                <div class="pb-format">
+                  <div class="pbf-label">White-label</div>
+                  <div class="pbf-desc">Ми у фоні під вашим брендом — клієнт бачить вас</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="partners-value">
+            <div class="pv-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+              Ви залишаєтесь основним контактом для клієнта
+            </div>
+            <div class="pv-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+              Дашборд оновлюється і підтримується в часі
+            </div>
+            <div class="pv-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+              Умови, ролі і межі відповідальності — письмово до старту
+            </div>
+            <div class="pv-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="20 6 9 17 4 12"/></svg>
+              Робота під NDA · до 5 паралельних проєктів
+            </div>
+          </div>
+
+          <div class="partners-cta">
+            <a href="https://www.linkedin.com/in/serhiy-kukharchuk/" target="_blank" rel="noopener" class="pcta-btn">Обговорити партнерство в LinkedIn →</a>
+            <a href="https://t.me/serhiy_novellum" target="_blank" rel="noopener" class="pcta-btn pcta-btn-outline">Telegram</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════
+           PAGE 7: КОНТАКТ
       ══════════════════════════════════════ -->
       <div class="rpage" id="page-contact">
         <div class="rpage-scroll rpage-contact">
@@ -733,6 +891,12 @@
               </div>
               <div class="contact-footer" style="justify-content:flex-start;margin-top:auto;font-size:11px;color:var(--faint)">
                 Не більше 5 проєктів одночасно — щоб кожен отримував повну увагу
+              </div>
+              <div class="cinfo-faq">
+                <div class="pfaq-item">
+                  <div class="pfaq-q">Мої дані в безпеці?</div>
+                  <div class="pfaq-a">NDA підписуємо до початку роботи. Дані не передаються третім особам.</div>
+                </div>
               </div>
             </div>
 
@@ -822,7 +986,7 @@
       <span>Novellum Analytics</span>
     </div>
     <div class="sb-right">
-      <span id="sbPageNum">Сторінка 1 з 5</span>
+      <span id="sbPageNum">Сторінка 1 з 7</span>
       <div class="sb-zoom">
         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         100%
