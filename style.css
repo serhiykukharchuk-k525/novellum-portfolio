@@ -92,6 +92,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   border-right: 1px solid var(--border);
   display: flex; flex-direction: column; flex-shrink: 0;
   overflow: hidden;
+  position: relative; z-index: 1;
 }
 .pages-panel::-webkit-scrollbar { width: 4px; }
 .pages-panel::-webkit-scrollbar-thumb { background: rgba(59,18,24,0.12); border-radius: 2px; }
@@ -885,6 +886,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   border-left: 1px solid var(--border); flex-shrink: 0;
   display: flex; flex-direction: column; overflow: hidden;
   transition: width 0.2s ease;
+  position: relative; z-index: 1;
 }
 .cw-header {
   display: flex; align-items: center; justify-content: space-between;
