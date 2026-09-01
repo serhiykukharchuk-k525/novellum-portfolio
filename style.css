@@ -936,6 +936,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .contact-widget { width: 200px; }
   .cw-stats { display: none; }
   .cw-stack { display: none; }
+  .ht-step span { flex: none; }
+  .ht-step em { margin-left: 6px; }
 }
 
 /* ═══════════════════════════════════════════
