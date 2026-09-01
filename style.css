@@ -772,6 +772,151 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   padding: 3px 9px; border-radius: 5px;
 }
 
+/* ── PRICES in process tiers ── */
+.pt-price {
+  font-size: 15px; font-weight: 600; color: var(--brand-hi);
+  font-variant-numeric: tabular-nums; letter-spacing: -.01em;
+}
+
+/* ── FAQ shared styles ── */
+.pfaq-item {
+  padding: 10px 0; border-top: 1px solid var(--border);
+}
+.pfaq-q {
+  font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 4px;
+}
+.pfaq-a {
+  font-size: 12px; color: var(--muted); line-height: 1.6;
+}
+
+/* FAQ on process page */
+.process-faq {
+  margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px;
+}
+
+/* FAQ on pain page */
+.pain-faq {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px;
+  margin-top: 10px;
+}
+
+/* FAQ on contact info col */
+.cinfo-faq {
+  margin-top: 10px; border-top: 1px solid var(--border); padding-top: 6px;
+}
+.cinfo-faq .pfaq-item { border-top: none; padding-top: 4px; }
+
+/* ── PROCESS CTA ── */
+.process-cta {
+  display: flex; align-items: center; gap: 14px; margin-top: 14px;
+  padding: 14px 20px; background: rgba(146,44,62,0.06);
+  border: 1px solid rgba(146,44,62,0.2); border-radius: 10px;
+  flex-wrap: wrap;
+}
+.pcta-btn {
+  display: inline-flex; align-items: center;
+  background: var(--brand); color: #fff;
+  border: none; border-radius: 8px;
+  padding: 10px 18px; font-size: 13px; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  white-space: nowrap;
+}
+.pcta-btn:hover { background: var(--brand-2); transform: translateY(-1px); }
+.pcta-btn-outline {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+.pcta-btn-outline:hover { background: rgba(59,18,24,0.06); transform: translateY(-1px); }
+.pcta-note {
+  font-size: 11px; color: var(--faint);
+}
+
+/* ── DEMO PAGE ── */
+.rpage-demo { display: flex; flex-direction: column; }
+.demo-header { margin-bottom: 12px; }
+.demo-badge {
+  font-size: 11px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--brand-hi); margin-bottom: 6px;
+}
+.demo-header h2 { font-size: 22px; font-weight: 400; font-family: var(--serif); margin-bottom: 4px; }
+.demo-header p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.demo-frame-wrap {
+  flex: 1; min-height: 0;
+  border: 1px solid rgba(146,44,62,0.2); border-radius: 10px;
+  overflow: hidden; margin-bottom: 10px;
+  background: #f0ece4;
+}
+.demo-iframe {
+  width: 100%; height: 100%; display: block; border: none;
+}
+.demo-footer {
+  display: flex; align-items: center; gap: 10px; font-size: 12px;
+  flex-wrap: wrap;
+}
+.demo-open-link { color: var(--brand-hi); text-decoration: none; font-weight: 500; }
+.demo-open-link:hover { opacity: 0.8; }
+.demo-footer-sep { color: var(--faint); }
+.demo-footer-note { color: var(--muted); }
+.demo-cta-link { color: var(--brand-hi); text-decoration: none; font-weight: 600; }
+.demo-cta-link:hover { opacity: 0.8; }
+
+/* Demo page thumbnail */
+.ppt-demo { display: flex; flex-direction: column; gap: 3px; width: 100%; height: 100%; }
+.ppt-demo-bar { height: 6px; background: rgba(146,44,62,0.3); border-radius: 2px; }
+.ppt-demo-screen { flex: 1; background: rgba(146,44,62,0.12); border-radius: 3px; display: flex; align-items: center; justify-content: center; }
+.ppt-demo-chart { width: 70%; height: 60%; background: rgba(146,44,62,0.25); border-radius: 2px; }
+
+/* Partners page thumbnail */
+.ppt-partners { display: flex; flex-direction: column; gap: 4px; align-items: center; justify-content: center; height: 100%; }
+.ppt-p-row { display: flex; gap: 5px; }
+.ppt-p-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(146,44,62,0.35); border: 1px solid rgba(146,44,62,0.5); }
+.ppt-p-line { width: 1px; height: 8px; background: rgba(146,44,62,0.3); }
+
+/* ── PARTNERS PAGE ── */
+.rpage-partners { display: flex; flex-direction: column; }
+#page-partners .rpage-scroll { overflow-y: auto; }
+
+.partners-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px;
+}
+.partner-block {
+  background: rgba(59,18,24,0.04); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 20px;
+}
+.pb-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--brand-hi); margin-bottom: 12px;
+}
+.pb-items { display: flex; flex-direction: column; gap: 10px; }
+.pb-item { display: flex; gap: 10px; font-size: 12px; color: var(--muted); line-height: 1.5; align-items: flex-start; }
+.pb-icon { color: var(--brand-hi); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.pb-item strong { color: var(--text); }
+
+.pb-formats { display: flex; flex-direction: column; gap: 8px; }
+.pb-format {
+  padding: 10px 12px; border-radius: 7px;
+  border: 1px solid var(--border); background: rgba(255,255,255,0.6);
+}
+.pbf-label { font-size: 12px; font-weight: 700; color: var(--brand-hi); margin-bottom: 3px; }
+.pbf-desc { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+.partners-value {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px;
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 20px; margin-bottom: 14px;
+  background: rgba(59,18,24,0.03);
+}
+.pv-item {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+}
+.pv-item svg { color: var(--brand-hi); flex-shrink: 0; margin-top: 1px; }
+
+.partners-cta {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+
 /* ── CONTACT PAGE ── */
 .rpage-contact { display: flex; align-items: center; justify-content: center; }
 .contact-wrap { display: flex; justify-content: center; align-items: center; min-height: 100%; padding: 32px 24px; }
@@ -1044,6 +1189,20 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .pf-conn { display: none; }
   .process-about { flex-direction: column; gap: 16px; }
   .pa-left { flex-direction: row; align-items: center; width: 100%; }
+
+  /* Process FAQ + CTA */
+  .process-faq { grid-template-columns: 1fr; }
+  .pain-faq { grid-template-columns: 1fr; }
+  .process-cta { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  /* Demo */
+  .demo-frame-wrap { min-height: 300px; }
+
+  /* Partners */
+  .partners-grid { grid-template-columns: 1fr; }
+  .partners-value { grid-template-columns: 1fr; }
+  .partners-cta { flex-direction: column; align-items: stretch; }
+  .partners-cta .pcta-btn { text-align: center; justify-content: center; }
 
   /* Контакт */
   .rpage-contact { min-height: auto; }
