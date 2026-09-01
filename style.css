@@ -309,11 +309,11 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   font-size: 12px; font-weight: 600; color: var(--brand-hi);
   margin-bottom: 16px; letter-spacing: 0.04em;
 }
-.ccf-body { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.ccf-body { display: flex; flex-direction: column; gap: 12px; }
 .ccf-sliders { display: flex; flex-direction: column; gap: 12px; }
 .ccf-row label { display: block; font-size: 11px; color: var(--faint); margin-bottom: 5px; }
 .ccf-hint { font-size: 10px; color: var(--faint); font-weight: 400; opacity: 0.8; }
-.ccf-bottom { display: flex; align-items: center; gap: 16px; }
+.ccf-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .ccf-results { display: flex; align-items: center; gap: 16px; }
 .ccf-divider { width: 1px; height: 40px; background: var(--border); }
 .ccf-result { text-align: center; }
@@ -1020,8 +1020,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .cost-calc { padding: 16px; }
   .calc-results { grid-template-columns: 1fr 1fr; gap: 8px; }
   .cost-calc-full { margin: 0 0 14px; padding: 14px 16px; }
-  .ccf-body { grid-template-columns: 1fr; gap: 14px; }
-  .ccf-bottom { justify-content: space-between; }
+  .ccf-body { gap: 10px; }
   .ccf-results { gap: 12px; }
   .ccf-divider { display: none; }
   .ccf-cta { font-size: 12px; padding: 8px 12px; white-space: nowrap; }
