@@ -35,8 +35,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   --brand:      #922C3E;   /* prod --bronze-bright — main accent */
   --brand-glow: rgba(146,44,62,0.15);
   --text:        #221A17;              /* prod --fg */
-  --muted:       rgba(34,26,23,0.72); /* prod --fg-muted */
-  --faint:       rgba(34,26,23,0.50); /* prod --fg-faint */
+  --muted:       rgba(34,26,23,0.82); /* prod --fg-muted */
+  --faint:       rgba(34,26,23,0.64); /* prod --fg-faint */
   --green:       #2E7D57;             /* prod --green-pos */
   --green-bright:#2E7D57;             /* same on light bg */
   --red:         #C25B4F;             /* prod --red-neg */
@@ -98,7 +98,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   font-size: 10px; font-weight: 600; color: var(--faint);
   letter-spacing: 0.1em; padding: 12px 10px 8px;
 }
-.pp-list { display: flex; flex-direction: column; gap: 2px; padding: 0 8px 6px; }
+.pp-list { display: flex; flex-direction: column; gap: 2px; padding: 0 12px 6px 8px; }
 .pp-hint {
   font-size: 9px; color: var(--faint); text-align: center;
   padding: 0 6px 10px; letter-spacing: 0.05em; opacity: 0.7;
@@ -311,6 +311,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .ccf-body { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
 .ccf-sliders { display: flex; flex-direction: column; gap: 12px; }
 .ccf-row label { display: block; font-size: 11px; color: var(--faint); margin-bottom: 5px; }
+.ccf-hint { font-size: 10px; color: var(--faint); font-weight: 400; opacity: 0.8; }
 .ccf-results { display: flex; align-items: center; gap: 16px; }
 .ccf-divider { width: 1px; height: 40px; background: var(--border); }
 .ccf-result { text-align: center; }
@@ -936,6 +937,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .contact-widget { width: 200px; }
   .cw-stats { display: none; }
   .cw-stack { display: none; }
+  .ht-step span { flex: none; }
+  .ht-step em { margin-left: 6px; }
 }
 
 /* ═══════════════════════════════════════════
