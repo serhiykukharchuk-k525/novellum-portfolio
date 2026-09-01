@@ -172,7 +172,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .pp-item.active .pp-name { color: var(--text); font-weight: 500; }
 
 /* ── Canvas area ── */
-.canvas-area { flex: 1; position: relative; overflow: hidden; background: var(--canvas); isolation: isolate; }
+.canvas-area { flex: 1; min-width: 0; position: relative; overflow: hidden; background: var(--canvas); isolation: isolate; }
 #bgCanvas { position: absolute; inset: 0; pointer-events: none; z-index: 0; background: var(--canvas); }
 .page-load-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 20; overflow: hidden; }
 .plb-fill {
