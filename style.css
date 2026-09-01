@@ -938,9 +938,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
    ═══════════════════════════════════════════ */
 @media (max-width: 1100px) {
   .pages-panel { width: 140px; }
-  .contact-widget { width: 200px; }
-  .cw-stats { display: none; }
-  .cw-stack { display: none; }
+  .contact-widget { display: none; }
   /* ht-step grid layout unchanged at tablet */
 }
 
