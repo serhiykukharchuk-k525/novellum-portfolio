@@ -1128,6 +1128,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
     white-space: nowrap;
   }
   .mn-item.active { color: var(--text); border-bottom-color: var(--brand); }
+  .mn-item-desktop-only { display: none; }
 
   /* App body */
   .app-body { display: flex; flex-direction: column; overflow: visible; }
