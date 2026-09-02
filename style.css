@@ -301,7 +301,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 
 /* Full-width calculator on pain page */
 .cost-calc-full {
-  margin: 0 4px 16px;
+  margin: 0 4px 4px;
   background: rgba(59,18,24,0.035);
   border: 1px solid var(--border);
   border-left: 3px solid var(--brand-hi);
