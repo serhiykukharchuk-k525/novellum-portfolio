@@ -98,29 +98,29 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .pages-panel::-webkit-scrollbar-thumb { background: rgba(59,18,24,0.12); border-radius: 2px; }
 .pp-title {
   font-size: 10px; font-weight: 600; color: var(--faint);
-  letter-spacing: 0.1em; padding: 12px 10px 8px;
+  letter-spacing: 0.1em; padding: 8px 10px 6px;
 }
-.pp-list { display: flex; flex-direction: column; gap: 2px; padding: 0 16px 6px 8px; }
+.pp-list { display: flex; flex-direction: column; gap: 1px; padding: 0 16px 4px 8px; }
 .pp-hint {
   font-size: 9px; color: var(--faint); text-align: center;
-  padding: 0 6px 10px; letter-spacing: 0.05em; opacity: 0.7;
+  padding: 0 6px 6px; letter-spacing: 0.05em; opacity: 0.7;
 }
 .pp-item {
-  border-radius: 6px; padding: 6px 6px 5px;
+  border-radius: 6px; padding: 4px 6px 4px;
   cursor: pointer; transition: background 0.15s;
   position: relative;
 }
 .pp-item:hover { background: rgba(59,18,24,0.06); }
 .pp-item.active { background: rgba(146,44,62,0.12); box-shadow: inset 0 0 0 1.5px var(--brand); }
-.pp-num { font-size: 9px; color: var(--faint); margin-bottom: 4px; }
+.pp-num { font-size: 9px; color: var(--faint); margin-bottom: 2px; }
 .pp-item.active .pp-num { color: var(--brand-hi); }
 
 /* Page thumbnails */
 .pp-thumb {
-  width: 100%; height: 72px;
+  width: 100%; height: 56px;
   background: var(--surface); border-radius: 4px;
-  overflow: hidden; margin-bottom: 5px; padding: 6px;
-  display: flex; flex-direction: column; gap: 4px;
+  overflow: hidden; margin-bottom: 3px; padding: 5px;
+  display: flex; flex-direction: column; gap: 3px;
 }
 .pp-item.active .pp-thumb { background: #EDE3E8; }
 
