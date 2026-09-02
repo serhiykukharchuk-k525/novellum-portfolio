@@ -535,8 +535,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   display: flex; align-items: center; justify-content: space-between;
   background: rgba(146,44,62,0.08);
   border: 1px solid rgba(146,44,62,0.25);
-  border-radius: 8px; padding: 12px 16px;
-  margin-top: 4px;
+  border-radius: 8px; padding: 8px 16px;
 }
 .pcb-text { font-size: 13px; font-weight: 500; color: var(--muted); }
 .pcb-link {
