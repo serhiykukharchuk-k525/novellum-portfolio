@@ -705,10 +705,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .ct-bar-item:nth-child(3) .ct-bf { animation-delay: 0.22s; }
 @keyframes ctBarGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .ct-bar-item em { font-style: normal; width: 50px; text-align: right; color: var(--faint); font-size: 9px; }
-.ct-results { display: flex; gap: 8px; flex-wrap: wrap; }
-.ct-r { display: flex; flex-direction: column; gap: 1px; }
-.ct-r strong { font-size: 14px; font-weight: 700; }
-.ct-r span { font-size: 11px; color: var(--faint); }
+.ct-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 6px; }
+.ct-r { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.ct-r strong { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ct-r span { font-size: 10px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .page-note {
   display: flex; align-items: center; gap: 7px;
   font-size: 12px; color: var(--faint);
