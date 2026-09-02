@@ -187,6 +187,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .rpage-scroll { height: 100%; overflow-y: hidden; overflow-x: clip; padding: 14px 28px; scrollbar-width: none; }
 .rpage-scroll::-webkit-scrollbar { display: none; }
 #page-pain .rpage-scroll { overflow-y: auto; overflow-x: hidden; }
+#page-cases .rpage-scroll { padding-bottom: 28px; }
 .pain-layout { max-width: 100%; overflow: hidden; }
 
 /* ── Page header ── */
