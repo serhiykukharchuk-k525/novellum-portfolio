@@ -580,6 +580,10 @@
             <h2>Кейси</h2>
             <p>Проекти під NDA · Цифри до і після</p>
           </div>
+          <div class="page-note" style="margin-bottom:10px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Всі кейси показані з дозволу клієнтів або анонімізовані. Робота виконується під NDA.
+          </div>
           <div class="cases-grid">
 
             <!-- 1 -->
@@ -607,26 +611,37 @@
               <p>Щоденне оновлення зависало або не добігало до кінця — менеджери починали день без актуальних даних. Знайшов де система тягне зайве і скоротив обсяг обробки у 14 разів.</p>
               <div class="ct-chart">
                 <svg viewBox="0 0 220 52">
-                  <!-- Big block = before (3.7М) shrinks, small block = after (260К) -->
-                  <rect x="0" y="2" rx="3" height="48" fill="var(--brand)" opacity=".12">
-                    <animate attributeName="width" from="210" to="210" dur="0.01s" fill="freeze"/>
+                  <!-- Baseline -->
+                  <line x1="10" y1="44" x2="210" y2="44" stroke="var(--border)" stroke-width="0.8"/>
+                  <!-- Before bars: crashes per day -->
+                  <rect x="14" y="44" width="22" height="0" rx="2" fill="var(--brand)" opacity=".75">
+                    <animate attributeName="y" from="44" to="8" dur="0.35s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                    <animate attributeName="height" from="0" to="36" dur="0.35s" begin="0.1s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
                   </rect>
-                  <text x="105" y="31" text-anchor="middle" font-size="10" fill="var(--brand)" opacity=".45" font-weight="500">3 700 000 рядків</text>
-                  <!-- Shrinking overlay that reveals the "after" block -->
-                  <rect x="0" y="2" rx="3" height="48" fill="var(--bg,#F3EDE6)" opacity="1">
-                    <animate attributeName="width" from="0" to="196" dur="0.7s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                  <rect x="44" y="44" width="22" height="0" rx="2" fill="var(--brand)" opacity=".7">
+                    <animate attributeName="y" from="44" to="5" dur="0.35s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                    <animate attributeName="height" from="0" to="39" dur="0.35s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
                   </rect>
-                  <!-- After block -->
-                  <rect x="196" y="8" width="0" height="36" rx="3" fill="var(--brand)" opacity=".8">
-                    <animate attributeName="width" from="0" to="24" dur="0.4s" begin="0.9s" fill="freeze"/>
-                    <animate attributeName="x" from="220" to="196" dur="0.4s" begin="0.9s" fill="freeze"/>
+                  <rect x="74" y="44" width="22" height="0" rx="2" fill="var(--brand)" opacity=".6">
+                    <animate attributeName="y" from="44" to="14" dur="0.35s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                    <animate attributeName="height" from="0" to="30" dur="0.35s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
                   </rect>
-                  <text x="208" y="31" text-anchor="middle" font-size="7.5" fill="white" opacity="0" font-weight="600">
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.2s" fill="freeze"/>260К
-                  </text>
-                  <text x="105" y="48" text-anchor="middle" font-size="8" fill="var(--brand)" opacity="0">
-                    <animate attributeName="opacity" from="0" to="0.6" dur="0.3s" begin="1.1s" fill="freeze"/>14× менше
-                  </text>
+                  <rect x="104" y="44" width="22" height="0" rx="2" fill="var(--brand)" opacity=".5">
+                    <animate attributeName="y" from="44" to="20" dur="0.35s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                    <animate attributeName="height" from="0" to="24" dur="0.35s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                  </rect>
+                  <!-- Divider: fix applied -->
+                  <line x1="138" y1="6" x2="138" y2="44" stroke="var(--brand)" stroke-width="0.7" stroke-dasharray="2 3" opacity=".35"/>
+                  <!-- After bars: 0 crashes (empty outlines) -->
+                  <rect x="144" y="38" width="22" height="6" rx="2" fill="none" stroke="var(--border)" stroke-width="1" opacity="0">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.8s" fill="freeze"/>
+                  </rect>
+                  <rect x="174" y="38" width="22" height="6" rx="2" fill="none" stroke="var(--border)" stroke-width="1" opacity="0">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.9s" fill="freeze"/>
+                  </rect>
+                  <!-- Labels -->
+                  <text x="71" y="52" text-anchor="middle" font-size="7.5" fill="var(--brand)" opacity=".45">збої</text>
+                  <text x="171" y="52" text-anchor="middle" font-size="7.5" fill="var(--faint)">0 збоїв</text>
                 </svg>
               </div>
               <div class="ct-results">
@@ -643,20 +658,30 @@
               <p>Страховки, ТО, пальне, водії — все лежало окремо, і щоб дізнатись статус одного авто треба було відкривати кілька місць. Зібрав усе в один дашборд зі статусом кожної машини і алертами по термінах.</p>
               <div class="ct-chart">
                 <svg viewBox="0 0 220 52">
-                  <!-- 7 source dots fading/moving to center dot -->
-                  <circle cx="18"  cy="14" r="7" fill="var(--brand)" opacity=".2"><animate attributeName="cx" from="18"  to="110" dur="0.5s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="cy" from="14" to="26" dur="0.5s" begin="0.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".2" to="0" dur="0.5s" begin="0.5s" fill="freeze"/></circle>
-                  <circle cx="52"  cy="10" r="7" fill="var(--brand)" opacity=".25"><animate attributeName="cx" from="52"  to="110" dur="0.5s" begin="0.6s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="cy" from="10" to="26" dur="0.5s" begin="0.6s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".25" to="0" dur="0.5s" begin="0.6s" fill="freeze"/></circle>
-                  <circle cx="86"  cy="18" r="7" fill="var(--brand)" opacity=".3"><animate attributeName="cx" from="86"  to="110" dur="0.5s" begin="0.7s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="cy" from="18" to="26" dur="0.5s" begin="0.7s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".3" to="0" dur="0.5s" begin="0.7s" fill="freeze"/></circle>
-                  <circle cx="18"  cy="40" r="7" fill="var(--brand)" opacity=".2"><animate attributeName="cx" from="18"  to="110" dur="0.5s" begin="0.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="cy" from="40" to="26" dur="0.5s" begin="0.8s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".2" to="0" dur="0.5s" begin="0.8s" fill="freeze"/></circle>
-                  <circle cx="52"  cy="44" r="7" fill="var(--brand)" opacity=".25"><animate attributeName="cx" from="52"  to="110" dur="0.5s" begin="0.9s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="cy" from="44" to="26" dur="0.5s" begin="0.9s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".25" to="0" dur="0.5s" begin="0.9s" fill="freeze"/></circle>
-                  <circle cx="86"  cy="36" r="7" fill="var(--brand)" opacity=".3"><animate attributeName="cx" from="86"  to="110" dur="0.5s" begin="1.0s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="cy" from="36" to="26" dur="0.5s" begin="1.0s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".3" to="0" dur="0.5s" begin="1.0s" fill="freeze"/></circle>
-                  <circle cx="35"  cy="26" r="5" fill="var(--brand)" opacity=".15"><animate attributeName="cx" from="35" to="110" dur="0.5s" begin="1.1s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1"/><animate attributeName="opacity" from=".15" to="0" dur="0.5s" begin="1.1s" fill="freeze"/></circle>
-                  <!-- Central merged dot -->
+                  <!-- Hub-spoke: 7 data sources → 1 central dashboard -->
+                  <!-- Spokes animate drawing in, then hub appears -->
+                  <!-- Source nodes (small circles) -->
+                  <circle cx="12" cy="10" r="4" fill="var(--brand)" opacity=".3"/>
+                  <circle cx="55" cy="5" r="4" fill="var(--brand)" opacity=".3"/>
+                  <circle cx="110" cy="4" r="4" fill="var(--brand)" opacity=".3"/>
+                  <circle cx="165" cy="5" r="4" fill="var(--brand)" opacity=".3"/>
+                  <circle cx="208" cy="10" r="4" fill="var(--brand)" opacity=".3"/>
+                  <circle cx="18" cy="44" r="4" fill="var(--brand)" opacity=".3"/>
+                  <circle cx="202" cy="44" r="4" fill="var(--brand)" opacity=".3"/>
+                  <!-- Spoke lines (animate stroke-dasharray) -->
+                  <line x1="12" y1="10" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 120"><animate attributeName="stroke-dasharray" from="0 120" to="120 0" dur="0.35s" begin="0.1s" fill="freeze"/></line>
+                  <line x1="55" y1="5" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 80"><animate attributeName="stroke-dasharray" from="0 80" to="80 0" dur="0.3s" begin="0.25s" fill="freeze"/></line>
+                  <line x1="110" y1="4" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 30"><animate attributeName="stroke-dasharray" from="0 30" to="30 0" dur="0.25s" begin="0.35s" fill="freeze"/></line>
+                  <line x1="165" y1="5" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 80"><animate attributeName="stroke-dasharray" from="0 80" to="80 0" dur="0.3s" begin="0.45s" fill="freeze"/></line>
+                  <line x1="208" y1="10" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 120"><animate attributeName="stroke-dasharray" from="0 120" to="120 0" dur="0.35s" begin="0.55s" fill="freeze"/></line>
+                  <line x1="18" y1="44" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 120"><animate attributeName="stroke-dasharray" from="0 120" to="120 0" dur="0.35s" begin="0.65s" fill="freeze"/></line>
+                  <line x1="202" y1="44" x2="110" y2="26" stroke="var(--brand)" stroke-width="0.8" opacity=".25" stroke-dasharray="0 120"><animate attributeName="stroke-dasharray" from="0 120" to="120 0" dur="0.35s" begin="0.75s" fill="freeze"/></line>
+                  <!-- Central hub grows last -->
                   <circle cx="110" cy="26" r="0" fill="var(--brand)" opacity=".85">
-                    <animate attributeName="r" from="0" to="18" dur="0.5s" begin="1.0s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
+                    <animate attributeName="r" from="0" to="14" dur="0.4s" begin="0.85s" fill="freeze" calcMode="spline" keySplines="0.25 0.46 0.45 0.94"/>
                   </circle>
-                  <text x="110" y="30" text-anchor="middle" font-size="10" fill="white" font-weight="700" opacity="0">
-                    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.4s" fill="freeze"/>7→1
+                  <text x="110" y="30" text-anchor="middle" font-size="9" fill="white" font-weight="700" opacity="0">
+                    <animate attributeName="opacity" from="0" to="1" dur="0.25s" begin="1.2s" fill="freeze"/>7→1
                   </text>
                 </svg>
               </div>
@@ -762,10 +787,6 @@
               </div>
             </div>
 
-          </div>
-          <div class="page-note">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            Всі кейси показані з дозволу клієнтів або анонімізовані. Робота виконується під NDA.
           </div>
         </div>
       </div>
@@ -1084,6 +1105,8 @@
         <!-- Stack -->
         <div class="cw-stack-label">Стек</div>
         <div class="cw-stack">
+          <span>Excel</span>
+          <span>1С / ERP</span>
           <span>Power BI</span>
           <span>DAX</span>
           <span>SQL</span>
