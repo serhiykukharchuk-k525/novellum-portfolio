@@ -184,7 +184,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 /* ── Report pages ── */
 .rpage { position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none; }
 .rpage.active { opacity: 1; pointer-events: auto; }
-.rpage-scroll { height: 100%; overflow-y: hidden; overflow-x: clip; padding: 14px 28px; scrollbar-width: none; }
+.rpage-scroll { height: 100%; overflow-y: hidden; overflow-x: clip; padding: 10px 28px; scrollbar-width: none; }
 .rpage-scroll::-webkit-scrollbar { display: none; }
 #page-pain .rpage-scroll { overflow-y: auto; overflow-x: hidden; }
 #page-cases .rpage-scroll { padding: 8px 28px 28px; }
@@ -335,7 +335,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .ccf-cta:hover { background: var(--brand-hi); }
 
 /* ── Right column: broken dashboard ── */
-.pain-right { display: flex; flex-direction: column; gap: 12px; min-width: 0; overflow-x: clip; }
+.pain-right { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-x: clip; }
 
 .pain-dash-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -677,7 +677,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .btn-outline-sm:hover { color: var(--text); border-color: var(--border-strong); background: rgba(59,18,24,0.04); }
 
 /* ── CASES PAGE ── */
-.cases-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 0; }
+.cases-grid { display: grid; grid-template-columns: repeat(3,1fr); column-gap: 6px; row-gap: 16px; margin-bottom: 0; }
 .case-tile {
   background: rgba(59,18,24,0.05); border: 1px solid var(--border);
   border-radius: 10px; padding: 7px 10px;
