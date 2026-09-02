@@ -1097,6 +1097,22 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 
 
 /* ═══════════════════════════════════════════
+   TABLET PORTRAIT  (≤ 900px) — без правої панелі
+   ═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .app-body { grid-template-columns: 120px 1fr; }
+  .contact-widget { display: none; }
+  .cases-grid { grid-template-columns: repeat(2, 1fr); }
+  .cases-grid .case-tile:nth-child(2) .ct-chart,
+  .cases-grid .case-tile:nth-child(6) .ct-chart { height: 52px; }
+  .process-flow { grid-template-columns: repeat(2, 1fr); }
+  .pf-conn { display: none; }
+  .pain-layout { grid-template-columns: 1fr; }
+  .pain-left { position: static; }
+  .ld-charts-row { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ═══════════════════════════════════════════
    MOBILE  (≤ 768px) — повна мобільна версія
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
