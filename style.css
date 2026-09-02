@@ -193,6 +193,9 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .page-header { margin-bottom: 16px; }
 .page-header h2 { font-size: 30px; font-weight: 400; font-family: var(--serif); letter-spacing: 0; margin-bottom: 4px; }
 .page-header p { font-size: 13px; color: var(--muted); }
+.page-header--inline { display: flex; align-items: baseline; gap: 14px; margin-bottom: 12px; }
+.page-header--inline h2 { margin-bottom: 0; flex-shrink: 0; }
+.page-header--inline p { margin-bottom: 0; }
 
 /* ──────────────────────────────────────
    PAGE 1: PAIN — Two-column layout
