@@ -4,6 +4,15 @@ const pageNames = { pain:'Зараз', solution:'Результат', cases:'К�
 let current = 'pain';
 let animating = false;
 
+/* ── URL routing ── */
+const pathMap = {
+  '/': 'pain', '/pain': 'pain', '/solution': 'solution',
+  '/cases': 'cases', '/process': 'process', '/demo': 'demo',
+  '/partners': 'partners', '/contact': 'contact',
+};
+const pageUrls   = { pain:'/', solution:'/solution', cases:'/cases', process:'/process', demo:'/demo', partners:'/partners', contact:'/contact' };
+const pageTitles = { pain:'Зараз | Novellum Analytics', solution:'Результат | Novellum Analytics', cases:'Кейси | Novellum Analytics', process:'Процес | Novellum Analytics', demo:'Демо | Novellum Analytics', partners:'Партнери | Novellum Analytics', contact:'Контакти | Novellum Analytics' };
+
 /* ── Responsive scale: letterbox desktop shell on narrow screens ── */
 function applyShellScale() {
   const viewport = document.getElementById('shellViewport');
@@ -124,6 +133,8 @@ function goTo(pageId) {
     if (pageId === 'solution') animateSolutionPage();
 
     current = pageId;
+    history.pushState({ page: pageId }, '', pageUrls[pageId] || '/');
+    document.title = pageTitles[pageId] || 'Novellum Analytics';
     updateSidebar(pageId);
     updateStatusBar(pageId);
     updateMobileNav(pageId);
@@ -376,7 +387,41 @@ document.addEventListener('DOMContentLoaded', () => {
   initSlicers();
   initCalculator();
   initContactForm();
-  updateStatusBar('pain');
+
+  // SPA routing: restore redirect from 404.html
+  const spa = sessionStorage.getItem('spa_redirect');
+  if (spa) { sessionStorage.removeItem('spa_redirect'); history.replaceState(null, '', spa); }
+
+  // Activate page matching current URL (direct visit or after redirect)
+  const initialPage = pathMap[location.pathname] || 'pain';
+  if (initialPage !== current) {
+    document.querySelectorAll('.rpage').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + initialPage)?.classList.add('active');
+    current = initialPage;
+    updateSidebar(initialPage);
+    updateMobileNav(initialPage);
+  }
+  document.title = pageTitles[current] || 'Novellum Analytics';
+  history.replaceState({ page: current }, '', pageUrls[current] || '/');
+  updateStatusBar(current);
+});
+
+/* ── Handle browser back/forward ── */
+window.addEventListener('popstate', (e) => {
+  const pageId = (e.state && e.state.page) || pathMap[location.pathname] || 'pain';
+  if (pageId === current || animating) return;
+  const prev = document.getElementById('page-' + current);
+  const next = document.getElementById('page-' + pageId);
+  if (prev) prev.classList.remove('active');
+  if (next) next.classList.add('active');
+  current = pageId;
+  document.title = pageTitles[pageId] || 'Novellum Analytics';
+  updateSidebar(pageId);
+  updateStatusBar(pageId);
+  updateMobileNav(pageId);
+  if (pageId === 'solution') animateSolutionPage();
+  const scroll = next?.querySelector('.rpage-scroll');
+  if (scroll) scroll.scrollTop = 0;
 });
 
 /* ── Contact form ── */
