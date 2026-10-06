@@ -8,12 +8,16 @@
   <!-- SPA redirect: if path matches a known route, restore it via sessionStorage -->
   <script>
     (function() {
-      var knownPaths = ['/', '/pain', '/solution', '/cases', '/process', '/demo', '/partners', '/contact'];
+      var pageSlugs = ['pain', 'solution', 'cases', 'process', 'demo', 'partners', 'contact'];
       var path = window.location.pathname;
       var norm = path.length > 1 && path.slice(-1) === '/' ? path.slice(0, -1) : path;
-      if (knownPaths.indexOf(norm) !== -1) {
+      var parts = norm.split('/').filter(Boolean);
+      var lastPart = parts[parts.length - 1];
+      if (pageSlugs.indexOf(lastPart) !== -1) {
+        // Compute base path: everything before the page slug
+        var basePath = parts.length > 1 ? '/' + parts.slice(0, -1).join('/') + '/' : '/';
         sessionStorage.setItem('spa_redirect', norm + window.location.search + window.location.hash);
-        window.location.replace(window.location.origin + '/');
+        window.location.replace(window.location.origin + basePath);
       }
     })();
   </script>

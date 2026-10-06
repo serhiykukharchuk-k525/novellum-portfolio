@@ -5,12 +5,24 @@ let current = 'pain';
 let animating = false;
 
 /* ── URL routing ── */
-const pathMap = {
-  '/': 'pain', '/pain': 'pain', '/solution': 'solution',
-  '/cases': 'cases', '/process': 'process', '/demo': 'demo',
-  '/partners': 'partners', '/contact': 'contact',
-};
-const pageUrls   = { pain:'/', solution:'/solution', cases:'/cases', process:'/process', demo:'/demo', partners:'/partners', contact:'/contact' };
+// Auto-detect base path so routing works both at root (custom domain) and at subpath (GitHub Pages project site)
+const _scriptEl = document.currentScript || (function(){ var s = document.querySelector('script[src*="main.js"]'); return s; })();
+const _scriptSrc = _scriptEl ? _scriptEl.src : '';
+const basePath = _scriptSrc ? _scriptSrc.replace(/\/main\.js(\?.*)?$/, '').replace(location.origin, '') : '';
+
+const pageSlugs = ['pain','solution','cases','process','demo','partners','contact'];
+const pathMap = (function() {
+  var m = {};
+  m[basePath + '/'] = 'pain';
+  m[basePath] = 'pain';
+  pageSlugs.forEach(function(s){ m[basePath + '/' + s] = s; });
+  return m;
+})();
+const pageUrls   = (function() {
+  var u = { pain: basePath + '/' };
+  pageSlugs.forEach(function(s){ if (s !== 'pain') u[s] = basePath + '/' + s; });
+  return u;
+})();
 const pageTitles = { pain:'Зараз | Novellum Analytics', solution:'Результат | Novellum Analytics', cases:'Кейси | Novellum Analytics', process:'Процес | Novellum Analytics', demo:'Демо | Novellum Analytics', partners:'Партнери | Novellum Analytics', contact:'Контакти | Novellum Analytics' };
 
 /* ── Responsive scale: letterbox desktop shell on narrow screens ── */
@@ -236,23 +248,27 @@ function formatAbbr(n) {
 }
 
 /* ── Pain slicer ── */
-function initSlicers() {
+function activateSlicer(pain, pushHistory) {
   const items = document.querySelectorAll('.slicer-item');
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      const pain = item.dataset.pain;
-      // Update slicer UI
-      items.forEach(i => {
-        i.classList.remove('active');
-        i.querySelector('.si-check').textContent = '';
-      });
-      item.classList.add('active');
-      item.querySelector('.si-check').textContent = '✓';
-      // Show the right pain visual
-      document.querySelectorAll('.pain-visual').forEach(v => v.classList.remove('active'));
-      const target = document.getElementById('pain-' + pain);
-      if (target) target.classList.add('active');
-    });
+  items.forEach(i => {
+    const match = i.dataset.pain === pain;
+    i.classList.toggle('active', match);
+    i.querySelector('.si-check').textContent = match ? '✓' : '';
+  });
+  document.querySelectorAll('.pain-visual').forEach(v => v.classList.remove('active'));
+  const target = document.getElementById('pain-' + pain);
+  if (target) target.classList.add('active');
+
+  if (pushHistory) {
+    const base = pageUrls[current] || '/';
+    const qs = pain && pain !== 'excel' ? '?s=' + pain : '';
+    history.pushState({ page: current, slicer: pain }, '', base + qs);
+  }
+}
+
+function initSlicers() {
+  document.querySelectorAll('.slicer-item').forEach(item => {
+    item.addEventListener('click', () => activateSlicer(item.dataset.pain, true));
   });
 }
 
@@ -401,27 +417,40 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSidebar(initialPage);
     updateMobileNav(initialPage);
   }
+  // Restore slicer from URL query param (?s=hours etc.)
+  const slicerParam = new URLSearchParams(location.search).get('s');
+  const validSlicers = ['excel', 'hours', 'versions', 'decisions', 'blind'];
+  const initialSlicer = validSlicers.includes(slicerParam) ? slicerParam : 'excel';
+  if (initialSlicer !== 'excel') activateSlicer(initialSlicer, false);
+
   document.title = pageTitles[current] || 'Novellum Analytics';
-  history.replaceState({ page: current }, '', pageUrls[current] || '/');
+  const initQs = initialSlicer !== 'excel' ? '?s=' + initialSlicer : '';
+  history.replaceState({ page: current, slicer: initialSlicer }, '', (pageUrls[current] || '/') + initQs);
   updateStatusBar(current);
 });
 
 /* ── Handle browser back/forward ── */
 window.addEventListener('popstate', (e) => {
   const pageId = (e.state && e.state.page) || pathMap[location.pathname] || 'pain';
-  if (pageId === current || animating) return;
-  const prev = document.getElementById('page-' + current);
-  const next = document.getElementById('page-' + pageId);
-  if (prev) prev.classList.remove('active');
-  if (next) next.classList.add('active');
-  current = pageId;
-  document.title = pageTitles[pageId] || 'Novellum Analytics';
-  updateSidebar(pageId);
-  updateStatusBar(pageId);
-  updateMobileNav(pageId);
-  if (pageId === 'solution') animateSolutionPage();
-  const scroll = next?.querySelector('.rpage-scroll');
-  if (scroll) scroll.scrollTop = 0;
+  const slicerId = (e.state && e.state.slicer) || new URLSearchParams(location.search).get('s') || 'excel';
+
+  if (pageId !== current && !animating) {
+    const prev = document.getElementById('page-' + current);
+    const next = document.getElementById('page-' + pageId);
+    if (prev) prev.classList.remove('active');
+    if (next) next.classList.add('active');
+    current = pageId;
+    document.title = pageTitles[pageId] || 'Novellum Analytics';
+    updateSidebar(pageId);
+    updateStatusBar(pageId);
+    updateMobileNav(pageId);
+    if (pageId === 'solution') animateSolutionPage();
+    const scroll = next?.querySelector('.rpage-scroll');
+    if (scroll) scroll.scrollTop = 0;
+  }
+
+  // Restore slicer on back/forward
+  if (pageId === 'pain') activateSlicer(slicerId, false);
 });
 
 /* ── Contact form ── */
