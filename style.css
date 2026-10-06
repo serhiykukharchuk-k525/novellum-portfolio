@@ -336,13 +336,13 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .ccf-cta:hover { background: var(--brand-hi); }
 
 /* ── Right column: broken dashboard ── */
-.pain-right { display: flex; flex-direction: column; gap: 8px; min-width: 0; overflow-x: clip; min-height: 0; }
+.pain-right { display: flex; flex-direction: column; gap: 10px; min-width: 0; overflow-x: clip; min-height: 0; }
 
 .pain-dash-header {
   display: flex; align-items: center; justify-content: space-between;
   background: rgba(224,82,82,0.06);
   border: 1px solid rgba(224,82,82,0.2);
-  border-radius: 8px; padding: 7px 14px;
+  border-radius: 8px; padding: 10px 14px;
   font-size: 12px;
 }
 .pdh-left {
@@ -353,7 +353,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .pdh-stale { font-size: 11px; color: #E09952; }
 
 /* Pain visuals: hidden by default, active shows */
-.pain-visual { display: none; flex-direction: column; gap: 10px; }
+.pain-visual { display: none; flex-direction: column; gap: 12px; }
 .pain-visual.active { display: flex; flex: 1; min-height: 0; justify-content: space-between; }
 
 /* Broken KPIs row */
@@ -451,11 +451,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .hours-timeline {
   background: rgba(59,18,24,0.04);
   border: 1px solid var(--border);
-  border-radius: 8px; padding: 10px 14px;
-  height: fit-content;
+  border-radius: 8px; padding: 14px;
 }
-.ht-title { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 10px; }
-.ht-steps { display: grid; grid-template-columns: 10px auto auto; column-gap: 8px; row-gap: 5px; margin-bottom: 8px; align-items: center; }
+.ht-title { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 12px; }
+.ht-steps { display: grid; grid-template-columns: 10px auto auto; column-gap: 8px; row-gap: 6px; margin-bottom: 10px; align-items: center; }
 .ht-step { display: contents; font-size: 12px; color: var(--faint); }
 .ht-step.done > * { color: var(--muted); }
 .ht-step.active > * { color: var(--text); font-weight: 500; }
