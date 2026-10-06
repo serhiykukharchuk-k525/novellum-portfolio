@@ -307,23 +307,23 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   border: 1px solid var(--border);
   border-left: 3px solid var(--brand-hi);
   border-radius: 8px;
-  padding: 18px 20px;
+  padding: 14px 20px;
 }
 .ccf-label {
   display: flex; align-items: center; gap: 6px;
   font-size: 12px; font-weight: 600; color: var(--brand-hi);
-  margin-bottom: 16px; letter-spacing: 0.04em;
+  margin-bottom: 12px; letter-spacing: 0.04em;
 }
-.ccf-body { display: flex; flex-direction: column; gap: 12px; }
-.ccf-sliders { display: flex; flex-direction: column; gap: 12px; }
-.ccf-row label { display: block; font-size: 11px; color: var(--faint); margin-bottom: 5px; }
+.ccf-body { display: flex; flex-direction: column; gap: 10px; }
+.ccf-sliders { display: flex; flex-direction: column; gap: 10px; }
+.ccf-row label { display: block; font-size: 11px; color: var(--faint); margin-bottom: 4px; }
 .ccf-hint { font-size: 10px; color: var(--faint); font-weight: 400; opacity: 0.8; }
 .ccf-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .ccf-results { display: flex; align-items: center; gap: 16px; }
 .ccf-divider { width: 1px; height: 40px; background: var(--border); }
 .ccf-result { text-align: center; }
 .ccr-label { font-size: 10px; color: var(--faint); margin-bottom: 3px; }
-.ccr-value { font-size: 22px; font-weight: 700; color: var(--red-bright); line-height: 1; margin-bottom: 2px; }
+.ccr-value { font-size: 20px; font-weight: 700; color: var(--red-bright); line-height: 1; margin-bottom: 2px; }
 .ccr-sub { font-size: 10px; color: var(--faint); }
 .ccf-cta-wrap { flex-shrink: 0; }
 .ccf-cta {
