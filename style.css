@@ -949,9 +949,18 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   display: flex; flex-direction: column;
 }
 .contact-info-col {
-  flex: none; padding: 16px 24px;
-  display: flex; flex-direction: row; align-items: center; gap: 20px; flex-wrap: wrap;
+  flex: none; padding: 14px 24px;
+  display: flex; flex-direction: row; align-items: center; gap: 16px; flex-wrap: nowrap;
 }
+/* Reset contact-person card style inside the strip */
+.contact-info-col .contact-person {
+  background: none; border: none; border-radius: 0; padding: 0; margin-bottom: 0;
+  gap: 10px; flex-shrink: 0;
+}
+.contact-info-col .cp-tags { display: none; }
+.contact-info-col .cp-role { margin-bottom: 0; }
+.contact-info-col .cinfo-stats { flex-shrink: 0; }
+.contact-info-col .cinfo-btns { flex-shrink: 0; margin-left: auto; flex-direction: row; }
 .cinfo-faq { display: none; }
 .contact-footer { display: none; }
 .contact-form-title { font-size: 26px; font-weight: 400; font-family: var(--serif); margin: 6px 0 8px; }
@@ -1230,7 +1239,9 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .contact-card { padding: 24px 18px; }
   .contact-wrap-2col { flex-direction: column; }
   .contact-form-col { padding: 24px 20px; }
-  .contact-info-col { flex: none; padding: 20px 20px; }
+  .contact-info-col { flex: none; padding: 14px 16px; flex-wrap: wrap; gap: 12px; }
+  .contact-info-col .cinfo-btns { margin-left: 0; flex-direction: column; }
+  .contact-info-col .cinfo-btns .cbtn { width: 100%; box-sizing: border-box; }
   .cinfo-btns { flex-direction: column; }
   .cinfo-btns .cbtn { width: 100%; box-sizing: border-box; }
   .contact-btns { flex-direction: column; }
