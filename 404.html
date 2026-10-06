@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- SPA redirect: if path matches a known route, restore it via sessionStorage -->
+  <script>
+    (function() {
+      var knownPaths = ['/', '/pain', '/solution', '/cases', '/process', '/demo', '/partners', '/contact'];
+      var path = window.location.pathname;
+      var norm = path.length > 1 && path.slice(-1) === '/' ? path.slice(0, -1) : path;
+      if (knownPaths.indexOf(norm) !== -1) {
+        sessionStorage.setItem('spa_redirect', norm + window.location.search + window.location.hash);
+        window.location.replace(window.location.origin + '/');
+      }
+    })();
+  </script>
+
+  <title>404 — Звіт не знайдено | Novellum Analytics</title>
+
+  <style>
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('https://novellum.co/assets/fonts/fira-sans-cyrillic-400.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:optional;src:url('https://novellum.co/assets/fonts/fira-sans-latin-400.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('https://novellum.co/assets/fonts/fira-sans-cyrillic-600.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:optional;src:url('https://novellum.co/assets/fonts/fira-sans-latin-600.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('https://novellum.co/assets/fonts/fira-sans-cyrillic-700.woff2') format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face{font-family:'Fira Sans';font-style:normal;font-weight:700;font-display:optional;src:url('https://novellum.co/assets/fonts/fira-sans-latin-700.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+    :root {
+      --bg: #FBF8F3;
+      --text: #221A17;
+      --muted: rgba(34,26,23,.55);
+      --faint: rgba(34,26,23,.38);
+      --brand: #7A2333;
+      --brand-hi: #922C3E;
+      --border: rgba(59,18,24,.12);
+      --red-pale: rgba(224,82,82,.08);
+      --red-border: rgba(224,82,82,.22);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Fira Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Titlebar ── */
+    .titlebar {
+      height: 36px;
+      background: #2D1820;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .tb-logo {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,.7);
+      letter-spacing: .04em;
+    }
+    .tb-sep { color: rgba(255,255,255,.2); font-size: 12px; }
+    .tb-file {
+      font-size: 12px;
+      color: rgba(255,255,255,.45);
+    }
+    .tb-dot { color: rgba(224,82,82,.8); font-size: 10px; }
+
+    /* ── Main canvas ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .error-card {
+      width: min(520px, 100%);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(59,18,24,.08);
+    }
+
+    .ec-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--red-pale);
+      border-bottom: 1px solid var(--red-border);
+      font-size: 12px;
+      color: #C0392B;
+      font-weight: 500;
+    }
+    .ec-header svg { flex-shrink: 0; }
+
+    .ec-body {
+      padding: 32px 28px 28px;
+      text-align: center;
+    }
+
+    .ec-code {
+      font-size: clamp(56px, 14vw, 96px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.04em;
+      color: var(--text);
+      margin-bottom: 4px;
+      position: relative;
+      display: inline-block;
+    }
+    .ec-code::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--brand), transparent);
+      border-radius: 2px;
+      margin-top: 10px;
+    }
+
+    .ec-title {
+      margin-top: 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .ec-desc {
+      margin-top: 6px;
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .ec-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+
+    .ec-pages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .ec-page-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .75rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all .15s;
+    }
+    .ec-page-link:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: rgba(122,35,51,.04);
+    }
+    .ec-page-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      opacity: .4;
+      flex-shrink: 0;
+    }
+
+    .ec-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      background: var(--brand);
+      color: #fff;
+      border-radius: 999px;
+      font-size: .85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .15s, transform .15s;
+    }
+    .ec-home:hover { background: var(--brand-hi); transform: translateY(-1px); }
+
+    /* ── Statusbar ── */
+    .statusbar {
+      height: 24px;
+      background: #2D1820;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .sb-text { font-size: 10px; color: rgba(255,255,255,.4); }
+    .sb-sep  { font-size: 10px; color: rgba(255,255,255,.18); }
+  </style>
+</head>
+<body>
+
+<div class="titlebar">
+  <span class="tb-logo">Novellum Analytics</span>
+  <span class="tb-sep">·</span>
+  <span class="tb-file">Аналітичний звіт</span>
+  <span class="tb-dot">●</span>
+</div>
+
+<main>
+  <div class="error-card">
+
+    <div class="ec-header">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+      </svg>
+      Помилка завантаження звіту
+    </div>
+
+    <div class="ec-body">
+      <div class="ec-code">404</div>
+
+      <p class="ec-title">Звіт не знайдено</p>
+      <p class="ec-desc">Схоже, ця сторінка не існує або була переміщена.<br>Оберіть розділ нижче — і дані знову перед вами.</p>
+
+      <div class="ec-divider"></div>
+
+      <div class="ec-pages">
+        <a href="/" class="ec-page-link"><span class="ec-page-dot"></span>Зараз</a>
+        <a href="/solution" class="ec-page-link"><span class="ec-page-dot"></span>Результат</a>
+        <a href="/cases" class="ec-page-link"><span class="ec-page-dot"></span>Кейси</a>
+        <a href="/process" class="ec-page-link"><span class="ec-page-dot"></span>Процес</a>
+        <a href="/partners" class="ec-page-link"><span class="ec-page-dot"></span>Партнери</a>
+        <a href="/contact" class="ec-page-link"><span class="ec-page-dot"></span>Контакти</a>
+      </div>
+
+      <a href="/" class="ec-home">← На головну</a>
+    </div>
+
+  </div>
+</main>
+
+<div class="statusbar">
+  <span class="sb-text">Сторінка не знайдена</span>
+  <span class="sb-sep">·</span>
+  <span class="sb-text">Power BI Desktop</span>
+  <span class="sb-sep">·</span>
+  <span class="sb-text">Novellum Analytics</span>
+</div>
+
+</body>
+</html>
