@@ -898,12 +898,13 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .partner-block {
   background: rgba(59,18,24,0.04); border: 1px solid var(--border);
   border-radius: 10px; padding: 16px 20px;
+  display: flex; flex-direction: column; justify-content: center;
 }
 .pb-eyebrow {
   font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   color: var(--brand-hi); margin-bottom: 12px;
 }
-.pb-items { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.pb-items { display: flex; flex-direction: column; justify-content: space-evenly; flex: 1; }
 .pb-item { display: flex; gap: 8px; font-size: 11px; color: var(--muted); line-height: 1.4; align-items: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pb-icon { color: var(--brand-hi); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 .pb-item strong { color: var(--text); }
