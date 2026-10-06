@@ -977,6 +977,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   flex: 1; justify-content: center; font-size: 12px;
   padding: 0 16px; white-space: nowrap; min-width: 120px; max-height: 32px;
 }
+.cinfo-faq { display: none; }
+.contact-footer { display: none; }
 .contact-form-title { font-size: 26px; font-weight: 400; font-family: var(--serif); margin: 6px 0 8px; }
 .contact-form-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
 
@@ -1253,7 +1255,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .contact-card { padding: 24px 18px; }
   .contact-wrap-2col { flex-direction: column; }
   .contact-form-col { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(146,44,62,0.18); }
-  .contact-info-col { flex: none; padding: 20px; }
+  .contact-info-col { flex: none; padding: 14px 16px; flex-direction: column; }
+  .cinfo-left { gap: 8px; }
+  .cinfo-right .cinfo-btns { flex-direction: row; height: auto; }
+  .cinfo-right .cinfo-btns .cbtn { flex: 1; max-height: none; }
   .cinfo-btns { flex-direction: column; }
   .cinfo-btns .cbtn { width: 100%; box-sizing: border-box; }
   .contact-btns { flex-direction: column; }
