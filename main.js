@@ -5,12 +5,24 @@ let current = 'pain';
 let animating = false;
 
 /* ── URL routing ── */
-const pathMap = {
-  '/': 'pain', '/pain': 'pain', '/solution': 'solution',
-  '/cases': 'cases', '/process': 'process', '/demo': 'demo',
-  '/partners': 'partners', '/contact': 'contact',
-};
-const pageUrls   = { pain:'/', solution:'/solution', cases:'/cases', process:'/process', demo:'/demo', partners:'/partners', contact:'/contact' };
+// Auto-detect base path so routing works both at root (custom domain) and at subpath (GitHub Pages project site)
+const _scriptEl = document.currentScript || (function(){ var s = document.querySelector('script[src*="main.js"]'); return s; })();
+const _scriptSrc = _scriptEl ? _scriptEl.src : '';
+const basePath = _scriptSrc ? _scriptSrc.replace(/\/main\.js(\?.*)?$/, '').replace(location.origin, '') : '';
+
+const pageSlugs = ['pain','solution','cases','process','demo','partners','contact'];
+const pathMap = (function() {
+  var m = {};
+  m[basePath + '/'] = 'pain';
+  m[basePath] = 'pain';
+  pageSlugs.forEach(function(s){ m[basePath + '/' + s] = s; });
+  return m;
+})();
+const pageUrls   = (function() {
+  var u = { pain: basePath + '/' };
+  pageSlugs.forEach(function(s){ if (s !== 'pain') u[s] = basePath + '/' + s; });
+  return u;
+})();
 const pageTitles = { pain:'Зараз | Novellum Analytics', solution:'Результат | Novellum Analytics', cases:'Кейси | Novellum Analytics', process:'Процес | Novellum Analytics', demo:'Демо | Novellum Analytics', partners:'Партнери | Novellum Analytics', contact:'Контакти | Novellum Analytics' };
 
 /* ── Responsive scale: letterbox desktop shell on narrow screens ── */
