@@ -451,7 +451,8 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .hours-timeline {
   background: rgba(59,18,24,0.04);
   border: 1px solid var(--border);
-  border-radius: 8px; padding: 14px;
+  border-radius: 8px; padding: 10px 14px;
+  height: fit-content;
 }
 .ht-title { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 10px; }
 .ht-steps { display: grid; grid-template-columns: 10px auto auto; column-gap: 8px; row-gap: 5px; margin-bottom: 8px; align-items: center; }
