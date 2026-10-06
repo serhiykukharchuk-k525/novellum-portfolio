@@ -1101,9 +1101,15 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .cw-stat-label { font-size: 9px; color: var(--faint); margin-top: 2px; }
 .cw-stack-label { font-size: 9px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
 .cw-stack { display: flex; flex-wrap: wrap; gap: 4px; }
-.cw-stack span { font-size: 9px; color: var(--faint); background: rgba(59,18,24,0.06); border: 1px solid var(--border); padding: 2px 6px; border-radius: 3px; }
+.cw-stack span { font-size: 9px; color: var(--faint); background: rgba(59,18,24,0.06); border: 1px solid var(--border); padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
 .cw-site { font-size: 10px; color: var(--brand); text-decoration: none; text-align: center; padding-top: 2px; }
 .cw-site:hover { opacity: 0.75; }
+.cw-footer { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); text-align: center; }
+.cw-footer-links { display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 4px; }
+.cw-footer-links a { font-size: 10px; color: var(--faint); text-decoration: none; }
+.cw-footer-links a:hover { color: var(--muted); }
+.cw-footer-links span { font-size: 10px; color: var(--faint); }
+.cw-footer-copy { font-size: 10px; color: var(--faint); }
 
 /* ── Status bar ── */
 .statusbar {
