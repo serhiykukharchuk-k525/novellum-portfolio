@@ -450,10 +450,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .hours-timeline {
   background: rgba(59,18,24,0.04);
   border: 1px solid var(--border);
-  border-radius: 8px; padding: 14px;
+  border-radius: 8px; padding: 10px 14px;
 }
-.ht-title { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 12px; }
-.ht-steps { display: grid; grid-template-columns: 10px auto auto; column-gap: 8px; row-gap: 6px; margin-bottom: 10px; align-items: center; }
+.ht-title { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 8px; }
+.ht-steps { display: grid; grid-template-columns: 10px auto auto; column-gap: 8px; row-gap: 4px; margin-bottom: 6px; align-items: center; }
 .ht-step { display: contents; font-size: 12px; color: var(--faint); }
 .ht-step.done > * { color: var(--muted); }
 .ht-step.active > * { color: var(--text); font-weight: 500; }
@@ -470,7 +470,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 @keyframes dotPulse { 0%,100% { box-shadow: 0 0 0 0 rgba(224,82,82,0.5); } 50% { box-shadow: 0 0 0 5px rgba(224,82,82,0); } }
 .ht-dot.pulse { animation: dotPulse 1.5s infinite; }
 .ht-dot.empty { background: rgba(59,18,24,0.09); border: 1.5px dashed rgba(59,18,24,0.14); }
-.ht-total { font-size: 11px; color: var(--faint); border-top: 1px solid var(--border); padding-top: 8px; }
+.ht-total { font-size: 11px; color: var(--faint); border-top: 1px solid var(--border); padding-top: 6px; }
 .ht-total strong { color: var(--red); }
 
 /* Versions fight */
