@@ -936,22 +936,33 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
 .rpage-contact { display: flex; align-items: center; justify-content: center; }
 .contact-wrap { display: flex; justify-content: center; align-items: center; height: 100%; padding: 16px 24px; }
 
-/* Two-column contact layout */
+/* Contact layout: form on top, info strip below */
 .contact-wrap-2col {
-  align-items: stretch; gap: 0;
-  max-width: 860px; width: 100%;
+  flex-direction: column; align-items: stretch; gap: 0;
+  max-width: 680px; width: 100%;
   background: rgba(59,18,24,0.04); border: 1px solid rgba(146,44,62,0.3);
   border-radius: 16px; overflow: hidden; position: relative;
 }
 .contact-form-col {
   flex: 1 1 0; padding: 24px 32px;
-  border-right: 1px solid rgba(146,44,62,0.18);
+  border-bottom: 1px solid rgba(146,44,62,0.18);
   display: flex; flex-direction: column;
 }
 .contact-info-col {
-  flex: 0 0 240px; padding: 24px 24px;
-  display: flex; flex-direction: column; gap: 10px;
+  flex: none; padding: 14px 24px;
+  display: flex; flex-direction: row; align-items: center; gap: 16px; flex-wrap: nowrap;
 }
+/* Reset contact-person card style inside the strip */
+.contact-info-col .contact-person {
+  background: none; border: none; border-radius: 0; padding: 0; margin-bottom: 0;
+  gap: 10px; flex-shrink: 0;
+}
+.contact-info-col .cp-tags { display: none; }
+.contact-info-col .cp-role { margin-bottom: 0; }
+.contact-info-col .cinfo-stats { flex-shrink: 0; }
+.contact-info-col .cinfo-btns { flex-shrink: 0; margin-left: auto; flex-direction: row; }
+.cinfo-faq { display: none; }
+.contact-footer { display: none; }
 .contact-form-title { font-size: 26px; font-weight: 400; font-family: var(--serif); margin: 6px 0 8px; }
 .contact-form-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
 
@@ -1227,8 +1238,10 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .contact-wrap { min-height: auto; padding: 16px; }
   .contact-card { padding: 24px 18px; }
   .contact-wrap-2col { flex-direction: column; }
-  .contact-form-col { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(146,44,62,0.18); }
-  .contact-info-col { flex: none; padding: 20px 20px; }
+  .contact-form-col { padding: 24px 20px; }
+  .contact-info-col { flex: none; padding: 14px 16px; flex-wrap: wrap; gap: 12px; }
+  .contact-info-col .cinfo-btns { margin-left: 0; flex-direction: column; }
+  .contact-info-col .cinfo-btns .cbtn { width: 100%; box-sizing: border-box; }
   .cinfo-btns { flex-direction: column; }
   .cinfo-btns .cbtn { width: 100%; box-sizing: border-box; }
   .contact-btns { flex-direction: column; }
