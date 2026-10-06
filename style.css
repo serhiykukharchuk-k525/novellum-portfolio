@@ -903,7 +903,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   color: var(--brand-hi); margin-bottom: 12px;
 }
-.pb-items { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.pb-items { display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding-bottom: 4px; box-sizing: border-box; }
 .pb-item { display: flex; gap: 8px; font-size: 11px; color: var(--muted); line-height: 1.4; align-items: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pb-icon { color: var(--brand-hi); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 .pb-item strong { color: var(--text); }
