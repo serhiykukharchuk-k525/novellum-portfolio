@@ -1163,18 +1163,22 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
     background: rgba(251,248,243,0.97);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
-    overflow-x: auto; gap: 0;
+    overflow-x: hidden; gap: 0;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .mobile-nav::-webkit-scrollbar { display: none; }
   .mn-item {
-    flex-shrink: 0; padding: 11px 14px;
+    flex: 1; min-width: 0;
+    padding: 11px 4px;
     font-size: 13px; font-weight: 500;
     color: var(--muted); text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: color 0.15s, border-color 0.15s;
     white-space: nowrap;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .mn-item.active { color: var(--text); border-bottom-color: var(--brand); }
   .mn-item-desktop-only { display: none; }
@@ -1282,7 +1286,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .ld-kpis { gap: 5px; }
   .ldk-v { font-size: 15px; }
   .ldb-l { width: 58px; font-size: 10px; }
-  .mn-item { padding: 10px 11px; font-size: 12px; }
+  .mn-item { padding: 10px 2px; font-size: 11px; }
   .broken-kpis { grid-template-columns: 1fr 1fr; gap: 6px; }
   #pain-hours .broken-kpis { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
   #pain-hours .broken-kpis .bkpi:first-child { grid-column: span 1 !important; text-align: center; }
