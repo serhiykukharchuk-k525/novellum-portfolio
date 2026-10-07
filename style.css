@@ -1263,6 +1263,7 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .partners-value { grid-template-columns: 1fr; }
   .partners-cta { flex-direction: column; align-items: stretch; }
   .partners-cta .pcta-btn { text-align: center; justify-content: center; }
+  .pb-item { white-space: normal; overflow: visible; text-overflow: clip; }
 
   /* Контакт */
   .rpage-contact { min-height: auto; }
