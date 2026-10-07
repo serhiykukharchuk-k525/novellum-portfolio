@@ -1218,7 +1218,11 @@ body { font-family: 'Fira Sans', system-ui, sans-serif; color: #221A17; backgrou
   .ccf-body { gap: 10px; }
   .ccf-results { gap: 12px; }
   .ccf-divider { display: none; }
-  .ccf-cta { font-size: 12px; padding: 8px 12px; white-space: nowrap; }
+  .ccf-bottom { flex-wrap: wrap; gap: 10px; }
+  .ccf-cta-wrap { width: 100%; }
+  .ccf-cta { font-size: 12px; padding: 10px 12px; white-space: nowrap; width: 100%; box-sizing: border-box; text-align: center; }
+  .et-row { grid-template-columns: minmax(60px, 80px) 1fr 1fr 1fr 0.7fr; }
+  .et-row > * { padding: 5px 6px; font-size: 10px; }
   .ldk-spark { height: 24px; }
 
   /* Результат (solution) */
